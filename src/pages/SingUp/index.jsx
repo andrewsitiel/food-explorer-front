@@ -20,7 +20,7 @@ export function SingUp() {
         </h2>
 
         <Input Title="Seu nome" Placeholder="Digite seu nome" Type="name" required />
-        <Input Title="E-mail" Placeholder="Digite seu E-Mail" Type="email" required />
+        <Input Title="E-mail" Placeholder="Exemplo: exemplo@exemplo.com" Type="email" required />
         <Input Title="Senha" Placeholder="Mínimo de 6 dígitos" Type="password" minlenght="6" required />
 
         <Button title="Criar Conta" />
