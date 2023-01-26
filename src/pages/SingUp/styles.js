@@ -44,7 +44,7 @@ export const Header = styled.header`
 
 export const Main = styled.main`
   width: clamp(29.6rem, 100px + 65vw, 47.6rem);
-  max-height: 60rem;
+  max-height: 63rem;
   padding: 6.4rem;
   border-radius: 1.6rem;
   background-color: ${ ({theme}) => theme.COLORS.BACKGROUND };
