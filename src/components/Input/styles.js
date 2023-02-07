@@ -8,6 +8,10 @@ export const Container = styled.div`
     border: 1px solid ${ ({theme}) => theme.COLORS.TEXT };
     border-radius: 5px;
 
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+
     &:focus-within {
       border-color: ${ ({theme}) => theme.COLORS.BUTTON };
     }
@@ -29,6 +33,11 @@ export const Container = styled.div`
       &:focus {
         outline: none;
       }
+    }
+
+    svg {
+      font-size: 2.4rem;
+      color: ${ ({theme}) => theme.COLORS.TEXT };
     }
   }
 
