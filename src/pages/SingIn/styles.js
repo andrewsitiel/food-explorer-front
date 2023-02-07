@@ -13,7 +13,7 @@ export const Container = styled.div`
 
   @media(min-width: 900px) {
     height: 100vh;
-    padding: 0 9rem 0 15rem;
+    padding: 0rem 9rem 0rem 15rem;
     
     justify-content: space-between;
     flex-direction: row;
@@ -44,12 +44,12 @@ export const Header = styled.header`
 
 export const Main = styled.main`
   width: clamp(29.6rem, 100px + 65vw, 47.6rem);
-  max-height: 60rem;
+  max-height: 63rem;
   padding: 6.4rem;
   border-radius: 1.6rem;
   background-color: ${ ({theme}) => theme.COLORS.BACKGROUND };
 
-  margin: 9rem 0 10rem;
+  margin: 9rem 0rem 10rem;
  
   display: flex;
   align-items: center;
