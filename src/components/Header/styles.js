@@ -64,7 +64,6 @@ export const Menu = styled.menu`
 
   div {
     grid-area: input;
-    max-width: 41rem;
 
     h3 {
       display: none;
