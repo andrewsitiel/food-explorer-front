@@ -17,38 +17,39 @@ export const Main = styled.main`
     margin: 3.4rem 0rem 3.4rem 3.2rem;
   }
 
-  table {
-    width: 100%;
-
-    text-align: left;
-    color: ${ ({theme}) => theme.COLORS.TEXT };
-    font: ${ ({theme}) => theme.FONTS.TEXT_SM };
-
-    border-radius: 6px 6px 0px 0px;
-
-    &, th, td {
-      border: 1px solid ${ ({theme}) => theme.COLORS.TEXT_TRANSPARENT };
-      border-spacing: 0rem;
-    }
-
-    th {
-      padding: 2.1rem 2rem 2.1rem 2.4rem;
-
-      &:first-child {
-        border-top-left-radius: 5px;
-      };
-
-      &:last-child {
-        border-top-right-radius: 5px;
-      } 
-    }
-
-    td {
-      padding: 1.6rem 2rem 1.6rem 2.4rem;
-    }
-  }
-
   @media(min-width: 900px) {
     padding-inline: clamp(5.3rem, 30px + 7vw, 12.3rem);
+  }
+`;
+
+export const Table = styled.table`
+  width: 100%;
+
+  text-align: left;
+  color: ${ ({theme}) => theme.COLORS.TEXT };
+  font: ${ ({theme}) => theme.FONTS.TEXT_SM };
+
+  border-radius: 6px 6px 0px 0px;
+
+  &, th, td {
+    border: 1px solid ${ ({theme}) => theme.COLORS.TEXT_TRANSPARENT };
+    border-spacing: 0rem;
+  }
+
+  th {
+    padding: 2.1rem 2rem 2.1rem 2.4rem;
+
+    &:first-child {
+      border-top-left-radius: 5px;
+    };
+
+    &:last-child {
+      border-top-right-radius: 5px;
+    } 
+  }
+
+  td {
+    padding: 1.6rem 2rem 1.6rem 2.4rem;
+    position: relative;
   }
 `;
