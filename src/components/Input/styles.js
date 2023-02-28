@@ -4,9 +4,13 @@ export const Container = styled.div`
   width: 100%;
   
   > div {
-    padding: 12px 14px;
+    padding: 1.2rem 1.4rem;
+    height: 4.8rem; 
+
     border: 1px solid ${ ({theme}) => theme.COLORS.TEXT };
     border-radius: 5px;
+
+    margin-top: ${({Title}) => Title ? "0.8rem" : "0rem"};
 
     display: flex;
     align-items: center;
@@ -41,10 +45,8 @@ export const Container = styled.div`
     }
   }
 
-  > h3 {
+  > label {
     font: ${ ({theme}) => theme.FONTS.TEXT_BASE };
-    color: ${ ({theme}) => theme.COLORS.TEXT };
-
-    margin-bottom: 0.8rem;
+    color: ${ ({theme}) => theme.COLORS.LABEL };
   }
 `;
