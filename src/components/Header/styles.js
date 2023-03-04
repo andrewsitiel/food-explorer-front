@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.header`  
-  width: 100%;
+  width: 100vw;
   align-self: start;
 
   display: flex;
@@ -42,6 +42,7 @@ export const Menu = styled.menu`
   position: absolute;
   top: 103px;
   right: 17px;
+  z-index: 100;
   transition: right 300ms;
   
   display: grid;
@@ -51,7 +52,7 @@ export const Menu = styled.menu`
   "orders orders exit";
   gap: 3rem;
 
-  visibility: ${ ({ isOpen }) => isOpen ? "visible" : "hidden" };
+  visibility: ${ ({ isMenuOpen }) => isMenuOpen ? "visible" : "hidden" };
 
   a {
     grid-area: favorites;
@@ -115,7 +116,7 @@ export const MenuButton = styled.button`
   background: none;
   
   transform-style: preserve-3d;
-  transform:  ${ ({ isOpen }) => isOpen ? "rotateY(0deg)" : "rotateY(180deg)" };
+  transform:  ${ ({ isMenuOpen }) => isMenuOpen ? "rotateY(0deg)" : "rotateY(180deg)" };
 
   transition: transform 500ms;
 

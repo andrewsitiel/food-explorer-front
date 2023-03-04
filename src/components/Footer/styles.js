@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.footer`  
-  width: 100%;
+  width: 100vw;
   align-self: end;
 
   display: flex;
@@ -35,7 +35,7 @@ export const Container = styled.footer`
   p {
     font: ${ ({theme}) => theme.FONTS.TEXT_BASE };
     color: ${ ({theme}) => theme.COLORS.TEXT };
-    white-space: nowrap;
+    white-space: wrap;
   };
 
   @media(min-width: 900px) {

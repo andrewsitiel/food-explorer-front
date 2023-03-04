@@ -7,10 +7,10 @@ import { Input } from "../Input";
 import { useState } from "react";
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function openAndCloseMenu() {
-    isOpen == false ? setIsOpen(true) : setIsOpen(false);
+    isMenuOpen == false ? setIsMenuOpen(true) : setIsMenuOpen(false);
   }
 
   return (
@@ -22,7 +22,7 @@ export function Header() {
         </h1>
       </div>
 
-      <Menu isOpen={isOpen}>
+      <Menu isMenuOpen={isMenuOpen}>
         <a>Meus Favoritos</a>
 
         <Input Placeholder="Busque pelas opções de pratos" Type="text" Icon={<CiSearch />} />
@@ -32,7 +32,7 @@ export function Header() {
         <button> <RxExit /> </button>
       </Menu>
 
-      <MenuButton onClick={openAndCloseMenu} isOpen={isOpen}>
+      <MenuButton onClick={openAndCloseMenu} isMenuOpen={isMenuOpen}>
         <span />
         <span />
       </MenuButton>
