@@ -5,19 +5,22 @@ export const Container = styled.div`
   height: 100vh;
 `;
 
-export const Main = styled.div`
+export const Main = styled.main`
   padding: 2.4rem 1.9rem 10rem;
   
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  justify-content: center;
+  grid-template-columns: 1fr;
   grid-template-areas: 
-  "back back"
-  "title title"
-  "image name"
-  "ingredients ingredients"
-  "price category"
-  "textarea textarea"
-  "button button"
+  "back"
+  "title"
+  "image"
+  "name"
+  "ingredients"
+  "price"
+  "category"
+  "textarea"
+  "button"
   ;
   gap: 3.2rem;
   
@@ -56,6 +59,10 @@ export const Main = styled.div`
     grid-area: button;
   }
 
+  > div {
+    max-width: 100%;
+  }
+
   a {
     align-self: center;
     justify-self: start;
@@ -71,7 +78,7 @@ export const Main = styled.div`
       content: "";
 
       position: absolute;
-      top: 10px;
+      top: 8px;
       left: -26px;
 
       width: 1.5rem;
@@ -109,13 +116,14 @@ export const Main = styled.div`
     label {
       font: ${ ({theme}) => theme.FONTS.TEXT_SM };
       color: ${ ({theme}) => theme.COLORS.LABEL };
+      white-space: nowrap;
+
       cursor: pointer;
     }
 
     svg {
-      font: ${ ({theme}) => theme.FONTS.TEXT_LG };
+      font-size: 2.4rem;
       color: ${ ({theme}) => theme.COLORS.TEXT };
-      transform: rotate(-90deg);
     }
 
     input {
@@ -141,8 +149,22 @@ export const Main = styled.div`
   > div:nth-child(5) > div {
     padding: 1.2rem 0.8rem;
     
-    overflow-x: auto;
+    overflow-x: overlay;
     overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+      position: absolute;
+      height: 5px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: ${ ({theme}) => theme.COLORS.TEXT_TRANSPARENT };
+      border-radius: 10px;
+    }
   }
   
   > div:nth-child(3) > div, 
@@ -191,7 +213,8 @@ export const Main = styled.div`
     > button {
       justify-self: center;
 
-      width: 35.7rem;
+      width: 100%;
+      max-width: 35.7rem;
       padding-block: 1.2rem;
       background: ${ ({theme}) => theme.COLORS.TRANSPARENT};
 
@@ -208,6 +231,19 @@ export const Main = styled.div`
       }
 
     }
+
+  @media(min-width: 600px){
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+    "back back"
+    "title title"
+    "image name"
+    "ingredients ingredients"
+    "price category"
+    "textarea textarea"
+    "button button"
+    ;
+  }
 
   @media (min-width: 900px) {
     padding-inline: 12.2rem;
