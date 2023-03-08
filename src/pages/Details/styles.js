@@ -90,6 +90,7 @@ export const Main = styled.main`
       grid-area: link;
       align-self: center;
       justify-self: start;
+      cursor: pointer;
     }
 
     > div {
