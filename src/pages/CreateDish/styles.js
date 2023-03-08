@@ -2,7 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: grid;
+  width: 100vw;
   height: 100vh;
+
+  overflow-x: hidden;
 `;
 
 export const Main = styled.main`
@@ -59,10 +62,6 @@ export const Main = styled.main`
     grid-area: button;
   }
 
-  > div {
-    max-width: 100%;
-  }
-
   a {
     align-self: center;
     justify-self: start;
@@ -103,7 +102,7 @@ export const Main = styled.main`
   }
 
   > div h4 {
-      font: ${ ({theme}) => theme.FONTS.TEXT_BASE };
+      font: ${ ({theme}) => theme.FONTS.BUTTON_TEXT };
       color: ${ ({theme}) => theme.COLORS.LABEL };
       
       margin-bottom: 0.8rem;
@@ -148,7 +147,7 @@ export const Main = styled.main`
 
   > div:nth-child(5) > div {
     padding: 1.2rem 0.8rem;
-    
+
     overflow-x: overlay;
     overflow-y: hidden;
 
@@ -167,7 +166,7 @@ export const Main = styled.main`
     }
   }
   
-  > div:nth-child(3) > div, 
+  > div:nth-child(3) > div,
   > div:nth-child(5) > div {
       height: 4.8rem;
 
