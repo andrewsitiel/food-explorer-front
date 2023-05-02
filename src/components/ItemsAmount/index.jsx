@@ -5,16 +5,28 @@ import { useState } from "react";
 export function ItemsAmount() {
   const [dishAmount, setDishAmount] = useState(1)
 
+  function reduceItemsAmount() {
+    if (dishAmount > 0) {
+      setDishAmount(dishAmount - 1)
+    } else {
+      setDishAmount(0)
+    }
+  }
+
+  function AddItemsAmount() {
+    setDishAmount(dishAmount + 1)
+  }
+
   return (
     <Container>
 
-      <button onClick={() => setDishAmount(dishAmount - 1)}>
+      <button onClick={() => reduceItemsAmount()}>
         <AiOutlineMinus />
       </button>
 
       <span>{String(dishAmount).padStart(2, "0")}</span>
 
-      <button onClick={() => setDishAmount(dishAmount + 1)}>
+      <button onClick={() => AddItemsAmount()}>
         <AiOutlinePlus />
       </button>
 
