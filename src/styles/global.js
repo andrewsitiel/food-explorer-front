@@ -13,5 +13,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     background-color: ${ ({theme}) => theme.COLORS.BACKGROUND_DARK };
+    width: 100vw;
+    height: 100vh;
   }
 `;
