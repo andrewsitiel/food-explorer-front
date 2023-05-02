@@ -86,6 +86,8 @@ export const Menu = styled.menu`
     border: none;
     background: none;
 
+    cursor: pointer;
+    
     svg {
       font-size: 2.3rem;
       color: ${ ({theme}) => theme.COLORS.TEXT };

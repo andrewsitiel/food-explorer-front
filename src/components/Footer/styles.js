@@ -2,14 +2,17 @@ import styled from "styled-components";
 
 export const Container = styled.footer`  
   width: 100vw;
+  padding: 2.3rem 1.9rem;
   align-self: end;
-
+  
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
+
+  margin-top: 6rem;
+
   background-color: ${ ({theme}) => theme.COLORS.BACKGROUND };
-  padding: 2.3rem 1.9rem;
   
   > div {
     display: flex;
