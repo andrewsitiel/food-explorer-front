@@ -5,7 +5,7 @@ export const Container = styled.div`
   align-items: center;
   gap: 0.8rem;
 
-  background: ${ ({ theme, IsNew }) => IsNew ? "transparent": theme.COLORS.TRANSPARENT };
+  background: ${ ({ theme, IsNew }) => IsNew ? "transparent": theme.COLORS.WHITE_TRANSPARENT };
   padding: 0.65rem 1.6rem;
   
   border: ${ ({ theme, IsNew }) =>  IsNew ? `dashed 1px ${theme.COLORS.TEXT_TRANSPARENT}` : "none" };
