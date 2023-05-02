@@ -215,7 +215,7 @@ export const Main = styled.main`
       width: 100%;
       max-width: 35.7rem;
       padding-block: 1.2rem;
-      background: ${ ({theme}) => theme.COLORS.TRANSPARENT};
+      background: ${ ({theme}) => theme.COLORS.WHITE_TRANSPARENT};
 
       border: solid 1px ${ ({theme}) => theme.COLORS.TEXT };
       border-radius: 5px;
