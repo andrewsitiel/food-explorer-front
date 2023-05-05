@@ -8,6 +8,7 @@ export function OrderStatus() {
   const menu = document.querySelector("td menu");
   let current = 0;
 
+
   function toggleStatusMenu() {
     isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true);
   }
@@ -64,6 +65,7 @@ export function OrderStatus() {
   return (
     <>
       <Container
+        orderStatus={orderStatus}
         onClick={toggleStatusMenu}
         onFocus={(e) => { toggleStatusMenu() }}
         tabIndex="0"

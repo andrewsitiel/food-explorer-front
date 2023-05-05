@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+const statusColors = {
+  "Pendente": "#AB222E",
+  "Preparando": "#FBA94C",
+  "Entregue": "#04D361"
+}
+
 export const Container = styled.div`
   display: flex;
   align-items: center;
@@ -12,6 +18,14 @@ export const Container = styled.div`
   border-radius: 5px;
 
   cursor: pointer;
+
+  &:before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: ${({orderStatus}) => statusColors[orderStatus]}
+  }
 
  svg {
   font-size: 2rem;
