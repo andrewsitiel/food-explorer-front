@@ -1,5 +1,6 @@
 import { Container } from "./styles";
 import { CardItem } from "../CardItem";
+import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { Autoplay, Keyboard, Mousewheel, Navigation } from "swiper";
@@ -12,8 +13,16 @@ import 'swiper/css/navigation';
 import THEME from "../../styles/theme";
 
 export function Slider({ Items }) {
+  const [viewPort, setViewPort] = useState(window.innerWidth);
 
-  const screenSize = window.visualViewport.width;
+  function updateViewPortValue() {
+    setViewPort(window.innerWidth);
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", updateViewPortValue);
+    removeEventListener("resize", window)
+  }, [])
 
   const SwiperButtonBackward = ({ children }) => {
     const swiper = useSwiper();
@@ -43,9 +52,9 @@ export function Slider({ Items }) {
 
   let visibleSlides;
 
-  if (screenSize > 900) {
+  if (viewPort > 900) {
     visibleSlides = 3.5;
-  } else if (screenSize > 500) {
+  } else if (viewPort > 500) {
     visibleSlides = 2.5;
   } else {
     visibleSlides = 1.5;
@@ -61,7 +70,10 @@ export function Slider({ Items }) {
         slidesPerView={visibleSlides}
         spaceBetween={2}
       >
-        <SwiperButtonBackward><IoIosArrowBack /></SwiperButtonBackward>
+        <SwiperButtonBackward>
+          <IoIosArrowBack />
+        </SwiperButtonBackward>
+
         {
           Items.map((item, index) => {
             return (
@@ -73,7 +85,10 @@ export function Slider({ Items }) {
             )
           })
         }
-        <SwiperButtonForward><IoIosArrowForward /></SwiperButtonForward>
+
+        <SwiperButtonForward>
+          <IoIosArrowForward />
+        </SwiperButtonForward>
       </Swiper>
     </Container >
   )
