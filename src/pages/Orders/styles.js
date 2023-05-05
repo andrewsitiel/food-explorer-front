@@ -10,11 +10,13 @@ export const Main = styled.main`
   height: 100%;
   padding-inline: 1.9rem;
 
+  overflow: auto;
+
   h2 {
     font: ${ ({theme}) => theme.FONTS.TITLE };
     color: ${ ({theme}) => theme.COLORS.TEXT };
 
-    margin: 3.4rem 0rem 3.4rem 3.2rem;
+    margin: 0rem 0rem 3.4rem 3.2rem;
   }
 
   @media(min-width: 900px) {
@@ -24,6 +26,7 @@ export const Main = styled.main`
 
 export const Table = styled.table`
   width: 100%;
+  margin: auto;
 
   text-align: left;
   color: ${ ({theme}) => theme.COLORS.TEXT };
