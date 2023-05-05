@@ -73,7 +73,7 @@ export function Home() {
               {
                 name: "Prugna Pie >",
                 description: "Torta de ameixa com massa amanteigada, polvilho em açúcar.",
-                price: String(32.97).split(".")
+                price: String(32).split(".")
               },
               {
                 name: "Prugna Pie >",

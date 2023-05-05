@@ -8,7 +8,7 @@ export const Container = styled.div`
   flex-direction: column;
 
   > main {
-    padding: 1rem;
+    padding-inline: 1rem;
   }
 
   > main > div {
@@ -17,7 +17,7 @@ export const Container = styled.div`
     gap: 1.1rem;
 
     position: relative;
-    
+        
     > img {
       width: clamp(10rem, 5rem + 46vw, 63.2rem);
 
