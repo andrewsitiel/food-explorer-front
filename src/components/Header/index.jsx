@@ -1,5 +1,6 @@
 import FoodExplorerIcon from "../../assets/Polygon.svg";
 import { Container, Menu, MenuButton } from "./styles";
+import { IoReceiptOutline } from "react-icons/io5"
 import { CiSearch } from "react-icons/ci";
 import { RxExit } from "react-icons/rx";
 import { Button } from "../Button";
@@ -27,7 +28,7 @@ export function Header() {
 
         <Input Placeholder="Busque pelas opções de pratos" Type="text" Icon={<CiSearch />} />
 
-        <Button title="Meus pedidos" orders="0" />
+        <Button title="Meus pedidos" orders="0" Icon={IoReceiptOutline} />
 
         <button> <RxExit /> </button>
       </Menu>
