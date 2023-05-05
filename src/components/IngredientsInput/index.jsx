@@ -3,6 +3,8 @@ import { Container } from "./styles";
 
 export function IngredientsInput({ IsNew, Title, onClick, ...rest }) {
 
+  const Icon = IsNew ? <FiPlus /> : <FiX />;
+
   function handleInputAtEnter(event) {
     if (IsNew && event.code === "Enter") {
       const inputButton = document.querySelector("main div > :not(input[readonly]) + button")
@@ -16,14 +18,14 @@ export function IngredientsInput({ IsNew, Title, onClick, ...rest }) {
       <input
         type="text"
         placeholder="Adicionar"
-        value={Title ? Title : ""}
+        value={Title && Title}
         onKeyDown={(e) => { handleInputAtEnter(e) }}
-        readOnly={IsNew ? false : true}
+        readOnly={!IsNew}
         {...rest}
       />
 
       <button onClick={onClick}>
-        {IsNew ? <FiPlus /> : <FiX />}
+        {Icon}
       </button>
 
     </ Container>
