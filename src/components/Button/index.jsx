@@ -1,9 +1,13 @@
 import { Container } from "./styles.js";
 
-export function Button({ title, orders }) {
+export function Button({ title, Icon, orders }) {
+  console.log(Icon);
+  const content = orders ? `${title} (${orders})` : title;
+
   return (
     <Container>
-      {orders ? `${title} (${orders})` : title}
+      {Icon && <Icon />}
+      {content}
     </Container>
   )
 }
