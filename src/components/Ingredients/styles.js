@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: max-content;
   display: flex;
+  flex-wrap: wrap;
   gap: 1.6rem;
 
   > div {

@@ -14,7 +14,6 @@ export function Ingredients({ data }) {
           )
         })
       }
-
     </Container>
   )
 }
