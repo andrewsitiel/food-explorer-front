@@ -32,7 +32,7 @@ export function CardItem({ item }) {
         {"R$ "}
         {item.price[0].padStart(2, "0")}
         {","}
-        {item.price[1] ? item.price[1].padEnd(2, "0") : "00"}
+        {item.price[1] && item.price[1].padEnd(2, "0") || "00"}
       </span>
 
       <div>
