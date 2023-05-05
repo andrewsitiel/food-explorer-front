@@ -4,6 +4,7 @@ import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
 import { Footer } from "../../components/Footer";
 import { Container, Main } from "./styles";
+import { IoReceiptOutline } from "react-icons/io5"
 
 import DishImage from "../../assets/Mask group.png";
 
@@ -40,7 +41,7 @@ export function Details() {
 
             <ItemsAmount />
 
-            <Button title="Incluir" />
+            <Button title="Incluir" Icon={IoReceiptOutline} />
           </div>
 
         </div>

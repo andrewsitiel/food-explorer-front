@@ -8,10 +8,10 @@ export const Container = styled.div`
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
-  align-center: center;
+  align-content: center;
   gap: 4.1rem;
   
-  padding: 2.4rem 1.9rem 10rem;
+  padding-inline: 1.9rem;
   color: ${ ({theme}) => theme.COLORS.TEXT };
 
   a {
@@ -40,7 +40,10 @@ export const Main = styled.main`
   }
 
   img {
+    width: clamp(27rem, 20rem + 19vw, 38.9rem);
     max-width: 38.9rem;
+
+    margin: auto;
   }
 
   > div {
