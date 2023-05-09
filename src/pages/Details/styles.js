@@ -87,7 +87,7 @@ export const Main = styled.main`
     "image content content"
     ;
 
-    padding-inline: 12.2rem;
+    padding-inline:  clamp(7rem, 23px + 7vw, 12.3rem);
 
     a {
       grid-area: link;

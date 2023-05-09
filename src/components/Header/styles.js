@@ -32,7 +32,7 @@ export const Container = styled.header`
   }
 
   @media(min-width: 900px) {
-    padding-inline: clamp(5.3rem, 30px + 7vw, 12.3rem);
+    padding-inline:  clamp(7rem, 23px + 7vw, 12.3rem);
   }
 `;
 

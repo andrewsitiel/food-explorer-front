@@ -8,13 +8,12 @@ export const Container = styled.div`
   flex-direction: column;
 
   > main {
-    padding-inline: 1rem;
+    padding-inline: 1.5rem;
   }
 
   > main > div {
     display: flex;
     align-items: center;
-    gap: 1.1rem;
 
     position: relative;
         
@@ -43,7 +42,7 @@ export const Container = styled.div`
     &:before {
       content: "";
       width: 100%;
-      height: 65%;
+      height: clamp(65%, 100% - 30vw ,100%);
 
       position: absolute;
       top: 32%;
@@ -67,7 +66,7 @@ export const Container = styled.div`
 
   @media(min-width: 900px) {
     > main {
-      padding-inline: clamp(5.3rem, 30px + 7vw, 12.3rem);
+      padding-inline: clamp(7rem, 23px + 7vw, 12.3rem);
     }
   }
 `;
