@@ -19,4 +19,8 @@ export const Container = styled.div`
       color: ${({theme, isDeadEndSwiper}) => isDeadEndSwiper ? theme.COLORS.BACKGROUND : theme.COLORS.TEXT };
     }
   }
+
+  .swiper-slide {
+    width: auto;
+  }
 `;

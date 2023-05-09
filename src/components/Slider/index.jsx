@@ -13,16 +13,6 @@ import 'swiper/css/navigation';
 import THEME from "../../styles/theme";
 
 export function Slider({ Items }) {
-  const [viewPort, setViewPort] = useState(window.innerWidth);
-
-  function updateViewPortValue() {
-    setViewPort(window.innerWidth);
-  }
-
-  useEffect(() => {
-    window.addEventListener("resize", updateViewPortValue);
-    removeEventListener("resize", window)
-  }, [])
 
   const SwiperButtonBackward = ({ children }) => {
     const swiper = useSwiper();
@@ -50,16 +40,6 @@ export function Slider({ Items }) {
     )
   }
 
-  let visibleSlides;
-
-  if (viewPort > 900) {
-    visibleSlides = 3.5;
-  } else if (viewPort > 500) {
-    visibleSlides = 2.5;
-  } else {
-    visibleSlides = 1.5;
-  }
-
   return (
     <Container>
       <Swiper
@@ -67,8 +47,8 @@ export function Slider({ Items }) {
         mousewheel={true}
         keyboard={true}
         autoplay
-        slidesPerView={visibleSlides}
-        spaceBetween={2}
+        slidesPerView="auto"
+        spaceBetween={3}
       >
         <SwiperButtonBackward>
           <IoIosArrowBack />
