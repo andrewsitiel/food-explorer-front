@@ -25,12 +25,14 @@ export function MyOrder() {
         <Input Title="Número do Cartão" Placeholder="0000 0000 0000 0000" />
 
         <Input Title="Validade" Placeholder="04/25" />
-        <Input Title="CVC" Placeholder="04/25" />
+        <Input Title="CVC" Placeholder="000" />
 
         <Button title="Finalizar Pagamento" Icon={IoReceiptOutline} />
       </div>
     )
   }
+
+  const PaymentScreen = isPixButtonSelected ? <img src={QR} alt="QR Code" /> : <CreditScreen />;
 
   const Items = [
     {
@@ -137,9 +139,7 @@ export function MyOrder() {
               Crédito
             </button>
 
-            {
-              isPixButtonSelected ? <img src={QR} alt="QR Code" /> : <CreditScreen />
-            }
+            {PaymentScreen}
 
           </div>
         </section>
