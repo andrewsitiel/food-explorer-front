@@ -20,21 +20,22 @@ export const Container = styled.div`
     > img {
       width: clamp(10rem, 5rem + 46vw, 63.2rem);
 
-      transform: translateX(-70px);
+      transform: translateX(0);
+
     }
 
     > div {
       transform: translateY(46px);
 
       > h3 {
-        font: ${ ({theme}) => theme.FONTS.TITLE };
+        font: 500 clamp(20px, 5px + 2vw, 24px) "Poppins", sans-serif;
         color: ${ ({theme}) => theme.COLORS.TEXT };
         
         margin-bottom: 8px;
       }
       
       > p {
-        font: ${ ({theme}) => theme.FONTS.INGREDIENT };
+        font: 400 clamp(12px, 6px + 2vw, 18px) "Poppins", sans-serif;
         color: ${ ({theme}) => theme.COLORS.TEXT };
       }
     }
@@ -58,7 +59,7 @@ export const Container = styled.div`
     margin-top: 6rem;
 
     > h4 {
-      font: ${({theme}) => theme.FONTS.TITLE};
+      font: 500 clamp(19px, 3px + 5vw, 32px) "Poppins", sans-serif;
       color: ${({theme}) => theme.COLORS.TEXT};
       margin-bottom: 3.9rem;
     }
@@ -67,6 +68,10 @@ export const Container = styled.div`
   @media(min-width: 900px) {
     > main {
       padding-inline: clamp(7rem, 23px + 7vw, 12.3rem);
+
+      > div > img {
+        transform: translateX(-70px);
+      }
     }
   }
 `;
