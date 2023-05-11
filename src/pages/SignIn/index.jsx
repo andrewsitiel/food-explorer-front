@@ -4,7 +4,7 @@ import { Container, Header, Main } from "./styles";
 import FoodExplorerIcon from "../../assets/Polygon.svg";
 
 
-export function SingIn() {
+export function SignIn() {
   return (
     <Container>
       <Header>

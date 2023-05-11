@@ -7,7 +7,7 @@ export const Container = styled.div`
   flex-direction: column;
   
   a {
-    font: ${ ({theme}) => theme.FONTS.BUTTON_TEXT };
+    font: 500 clamp(10px, 5px + 2vw, 14px) "Poppins", sans-serif;
     color: ${ ({theme}) => theme.COLORS.TEXT };
   }
 
@@ -29,7 +29,7 @@ export const Header = styled.header`
   margin-top: 7rem;
 
   > h1 {
-    font: ${ ({theme}) => theme.FONTS.LOGO };
+    font: 700 clamp(30px, 5px + 5vw, 43px) "Roboto", sans-serif;
     color: ${ ({theme}) => theme.COLORS.TEXT };
   }
 
@@ -58,7 +58,7 @@ export const Main = styled.main`
   gap: 3.2rem;
 
   > h2 {
-    font: ${ ({theme}) => theme.FONTS.TITLE };
+    font: 500 clamp(19px, 3px + 5vw, 32px) "Poppins", sans-serif;
     color: ${ ({theme}) => theme.COLORS.TEXT };
 
     text-align: center;
