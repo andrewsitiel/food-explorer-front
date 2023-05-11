@@ -6,7 +6,7 @@ export const Container = styled.div`
   gap: 1.4rem;
 
   > span {
-    font:  ${ ({theme}) => theme.FONTS.ITEMS };
+    font:  700 clamp(7px, 3px + 5vw, 20px) "Roboto", sans-serif;
     color: ${ ({theme}) => theme.COLORS.TEXT };
   }
 

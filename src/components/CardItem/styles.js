@@ -23,7 +23,7 @@ export const Container = styled.div`
   }
 
   > h4 {
-    font: ${ ({theme}) => theme.FONTS.BACK };
+    font: 500 clamp(20px, 5px + 2vw, 24px) "Poppins", sans-serif;
     color: ${ ({theme}) => theme.FONTS.TEXT };
     font-weight: 700;
 
@@ -31,12 +31,13 @@ export const Container = styled.div`
   }
 
   > p {
-    font: ${({theme}) => theme.FONTS.TEXT_SM};
+    font: 400 clamp(10px, 1px + 3vw, 14px) "Roboto", sans-serif;
     color: ${({theme}) => theme.COLORS.LABEL};
+    text-align: center;
   }
 
   > span {
-      font: ${ ({theme}) => theme.FONTS.PRICE };
+      font: 400 clamp(19px, 3px + 5vw, 32px) "Roboto", sans-serif;
       color: ${ ({theme}) => theme.COLORS.PRICE };
   }
 

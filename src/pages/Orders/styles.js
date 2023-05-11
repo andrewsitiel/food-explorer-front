@@ -13,7 +13,7 @@ export const Main = styled.main`
   overflow: auto;
 
   h2 {
-    font: ${ ({theme}) => theme.FONTS.TITLE };
+    font: 500 clamp(19px, 3px + 5vw, 32px) "Poppins", sans-serif;
     color: ${ ({theme}) => theme.COLORS.TEXT };
 
     margin: 0rem 0rem 3.4rem 3.2rem;
@@ -55,4 +55,8 @@ export const Table = styled.table`
     padding: 1.6rem 2rem 1.6rem 2.4rem;
     position: relative;
   }
+
+> tr {
+  border-bottom-color: white;
+}
 `;

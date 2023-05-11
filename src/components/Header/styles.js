@@ -21,7 +21,7 @@ export const Container = styled.header`
     gap: 1.9rem;
     
     > h1 {
-      font: ${ ({theme}) => theme.FONTS.LOGO_HEADER };
+      font: 700 clamp(19px, 7px + 3vw, 25px) "Roboto", sans-serif;
       color: ${ ({theme}) => theme.COLORS.TEXT };
       white-space: nowrap;
     }
@@ -60,7 +60,7 @@ export const Menu = styled.menu`
     grid-area: favorites;
     justify-self: center;
 
-    font: ${ ({theme}) => theme.FONTS.TEXT_BASE };
+    font: 400 clamp(12px, 1px + 2vw, 16px) "Roboto", sans-serif;
     color: ${ ({theme}) => theme.COLORS.TEXT_SECONDARY };
     white-space: nowrap;
   }

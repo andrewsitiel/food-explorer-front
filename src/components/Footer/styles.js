@@ -21,7 +21,7 @@ export const Container = styled.footer`
     gap: 1.9rem;
     
     > h1 {
-      font: ${ ({theme}) => theme.FONTS.LOGO_HEADER };
+      font: 700 clamp(19px, 7px + 3vw, 25px) "Roboto", sans-serif;
       color: ${ ({theme}) => theme.COLORS.TEXT_TRANSPARENT };
       white-space: nowrap;
     }
@@ -36,7 +36,7 @@ export const Container = styled.footer`
   };
 
   p {
-    font: ${ ({theme}) => theme.FONTS.TEXT_BASE };
+    font: 400 clamp(12px, 1px + 2vw, 16px) "Roboto", sans-serif;
     color: ${ ({theme}) => theme.COLORS.TEXT };
     white-space: wrap;
   };

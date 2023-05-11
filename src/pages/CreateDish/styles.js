@@ -67,7 +67,7 @@ export const Main = styled.main`
     justify-self: start;
     margin-left: 1.5rem;
 
-    font: ${ ({theme}) => theme.FONTS.BACK };
+    font: 500 clamp(20px, 5px + 2vw, 24px) "Poppins", sans-serif;
     color: ${ ({theme}) => theme.COLORS.TEXT };
 
     position: relative;
@@ -90,19 +90,19 @@ export const Main = styled.main`
   }
 
   > h3 {
-    font: ${ ({theme}) => theme.FONTS.TITLE };
+    font: 500 clamp(19px, 3px + 5vw, 32px) "Poppins", sans-serif;
     color: ${ ({theme}) => theme.COLORS.TEXT };
   }
 
   > div > label {
-      font: ${ ({theme}) => theme.FONTS.BUTTON_TEXT };
+      font: 500 clamp(10px, 5px + 2vw, 14px) "Poppins", sans-serif;
       color: ${ ({theme}) => theme.COLORS.LABEL };
 
       margin-bottom: 1rem;
   }
 
   > div h4 {
-      font: ${ ({theme}) => theme.FONTS.BUTTON_TEXT };
+      font: 500 clamp(10px, 5px + 2vw, 14px) "Poppins", sans-serif;
       color: ${ ({theme}) => theme.COLORS.LABEL };
       
       margin-bottom: 0.8rem;
@@ -220,7 +220,7 @@ export const Main = styled.main`
       border: solid 1px ${ ({theme}) => theme.COLORS.TEXT };
       border-radius: 5px;
 
-      font: ${ ({theme}) => theme.FONTS.BUTTON_TEXT };
+      font: 500 clamp(10px, 5px + 2vw, 14px) "Poppins", sans-serif;
       color: ${ ({theme}) => theme.COLORS.TEXT };
 
       cursor: pointer;

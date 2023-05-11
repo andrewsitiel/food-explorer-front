@@ -46,7 +46,7 @@ export const Container = styled.div`
   }
 
   > label {
-    font: ${ ({theme}) => theme.FONTS.TEXT_BASE };
+    font: 400 clamp(12px, 1px + 2vw, 16px) "Roboto", sans-serif;
     color: ${ ({theme}) => theme.COLORS.LABEL };
   }
 `;
