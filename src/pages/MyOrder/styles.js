@@ -13,21 +13,21 @@ export const Container = styled.div`
 
     > section {
       > h3 {
-        font: ${({theme}) => theme.FONTS.TITLE};
+        font: 500 clamp(19px, 3px + 5vw, 32px) "Poppins", sans-serif;
         color: ${({theme}) => theme.COLORS.TEXT};
         
         margin-bottom: 3.2rem;
       }
       
       > h4 {
-        font: ${({theme}) => theme.FONTS.BACK};
+        font: 500 clamp(20px, 5px + 2vw, 24px) "Poppins", sans-serif;
         color: ${({theme}) => theme.COLORS.TEXT};
       }
 
     }
 
    > section > div {
-      width: clamp(20rem, 1rem + 70vw, 53rem);
+      width: clamp(25rem, 9rem + 50vw, 53rem);
       height: 44.5rem;
 
       border: 1px solid ${({theme}) => theme.COLORS.WHITE_TRANSPARENT};
@@ -84,7 +84,7 @@ export const Container = styled.div`
         
         border: none;
         
-        font: ${({theme}) => theme.FONTS.TEXT_BASE};
+        font: 400 clamp(12px, 1px + 2vw, 16px) "Roboto", sans-serif;
         color: ${({theme}) => theme.COLORS.TEXT};
         border-right: 1px solid ${({theme}) => theme.COLORS.WHITE_TRANSPARENT};
         border-bottom: 1px solid ${({theme}) => theme.COLORS.WHITE_TRANSPARENT};
@@ -114,6 +114,10 @@ export const Container = styled.div`
     > main {
       padding-inline:  clamp(7rem, 23px + 7vw, 12.3rem);
       flex-direction: row;
+
+      > section > div {
+        width: clamp(20rem, 1rem + 37vw, 53rem);
+      }
     }
   }
 `;
@@ -137,7 +141,7 @@ export const ListItem = styled.li`
       background: none;
       border: none;
 
-      font: ${({theme}) => theme.FONTS.TEXT_SM};
+      font: 400 clamp(10px, 1px + 3vw, 14px) "Roboto", sans-serif;
       color: ${({theme}) => theme.COLORS.BUTTON_LIGHT};
       
       cursor: pointer;
@@ -149,12 +153,12 @@ export const ListItem = styled.li`
     gap: 1rem;
     
     > h4 {
-      font: ${({theme}) => theme.FONTS.BACK};
+      font:500 clamp(20px, 5px + 2vw, 24px) "Poppins", sans-serif;
       color: ${({theme}) => theme.COLORS.TEXT};
     }
     
     > span {
-      font: ${({theme}) => theme.FONTS.TEXT_SM};
+      font: 400 clamp(10px, 1px + 3vw, 14px) "Roboto", sans-serif;
       color: ${({theme}) => theme.COLORS.LABEL};
     }
   }
