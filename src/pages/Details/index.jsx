@@ -1,10 +1,10 @@
 import { ItemsAmount } from "../../components/ItemsAmount";
 import { Ingredients } from "../../components/Ingredients";
+import { IoReceiptOutline } from "react-icons/io5"
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
 import { Footer } from "../../components/Footer";
-import { Container, Main } from "./styles";
-import { IoReceiptOutline } from "react-icons/io5"
+import { Container, Main, DESCRIPTION } from "./styles";
 
 import DishImage from "../../assets/Mask group.png";
 
@@ -18,7 +18,7 @@ export function Details() {
 
         <img src={DishImage} alt="Dish's image" />
 
-        <div>
+        <DESCRIPTION>
 
           <h3>Salada Ravanello</h3>
           <p>
@@ -44,7 +44,7 @@ export function Details() {
             <Button title="Incluir" Icon={IoReceiptOutline} />
           </div>
 
-        </div>
+        </DESCRIPTION>
 
       </Main>
 
