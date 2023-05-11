@@ -8,7 +8,7 @@ export const Container = styled.div`
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
   gap: 4.1rem;
   
   padding-inline: 1.9rem;
@@ -19,7 +19,7 @@ export const Main = styled.main`
     justify-self: center;
     margin-left: 1.5rem;
 
-    font: ${ ({theme}) => theme.FONTS.BACK };
+    font: 500 clamp(20px, 5px + 2vw, 24px) "Poppins", sans-serif;
 
     position: relative;
 
@@ -46,40 +46,6 @@ export const Main = styled.main`
     margin: auto;
   }
 
-  > div {
-
-    h3 {
-      font: ${ ({theme}) => theme.FONTS.TEXT_XL };
-      margin-bottom: 0.8rem;
-    }
-
-    > div:nth-child(3) {
-      margin: 2.6rem 0rem 4.3rem;
-    }
-    
-    > div:nth-child(4) {
-      display: flex;
-      align-items: center;
-
-      > button {
-        max-width: 9.2rem;
-      }
-
-      > span:nth-child(1) {
-        font: ${ ({theme}) => theme.FONTS.PRICE };
-        color: ${ ({theme}) => theme.COLORS.PRICE };
-      }
-
-      > div {
-        margin: 0rem 2.4rem 0rem 5.3rem;
-      }
-    }
-    
-    p {
-      font: ${ ({theme}) => theme.FONTS.DESCRIPTION };
-    }
-  }
-
   @media (min-width: 900px) {
     display: grid;
     grid-template-areas: 
@@ -87,7 +53,7 @@ export const Main = styled.main`
     "image content content"
     ;
 
-    padding-inline:  clamp(7rem, 23px + 7vw, 12.3rem);
+    padding-inline:  clamp(7rem, 23px + 5vw, 12.3rem);
 
     a {
       grid-area: link;
@@ -102,6 +68,54 @@ export const Main = styled.main`
 
     img {
       grid-area: image;
+    }
+  }
+`;
+
+export const DESCRIPTION = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h3 {
+    font: 500 clamp(52px, 3px + 4vw, 56px) "Poppins", sans-serif;
+    text-align: center;
+    margin-bottom: 0.8rem;
+  }
+
+  > div:nth-child(3) {
+    margin: 2.6rem 0rem 4.3rem;
+  }
+  
+  > div:nth-child(4) {
+    display: flex;
+    align-items: center;
+
+    > button {
+      max-width: 9.2rem;
+    }
+
+    > span:nth-child(1) {
+      font: 400 clamp(19px, 3px + 5vw, 32px) "Roboto", sans-serif;
+      color: ${ ({theme}) => theme.COLORS.PRICE };
+    }
+
+    > div {
+      margin: 0rem 2.4rem 0rem 5.3rem;
+    }
+  }
+  
+  p {
+    font: 400 clamp(20px, 3px + 5vw, 24px) "Poppins", sans-serif;
+    text-align: center;
+  }
+
+
+  @media(min-width: 900px) {
+    align-items: flex-start;
+
+    > h3, p {
+      text-align: left;
     }
   }
 `;

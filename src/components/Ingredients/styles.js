@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1.6rem;
 
   > div {
@@ -16,7 +17,7 @@ export const Container = styled.div`
     gap: 0.8rem;
   
     > h4 {
-      font: ${ ({theme}) => theme.FONTS.INGREDIENT };
+      font: 400 clamp(12px, 6px + 2vw, 18px) "Poppins", sans-serif;
     }
   }
 `;
