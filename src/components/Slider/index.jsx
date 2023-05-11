@@ -48,7 +48,7 @@ export function Slider({ Items }) {
         keyboard={true}
         autoplay
         slidesPerView="auto"
-        spaceBetween={3}
+        spaceBetween={27}
       >
         <SwiperButtonBackward>
           <IoIosArrowBack />
