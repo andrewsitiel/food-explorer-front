@@ -24,7 +24,7 @@ export function CardItem({ item }) {
 
       <img src={DishImage} alt={`Foto de um(a) ${item.name}`} />
 
-      <h4>{item.name}</h4>
+      <h4>{item.name + " >"} </h4>
       <p>
         {item.description}
       </p>
