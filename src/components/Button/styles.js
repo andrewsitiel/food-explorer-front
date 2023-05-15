@@ -14,7 +14,7 @@ export const Container = styled.button`
   background-color: ${ ({theme}) => theme.COLORS.BUTTON };
 
   font-family: ${({theme}) => theme.FONTS.TITLE};
-  font-size: clamp(0.5rem, 0.3rem + 1vw, 1.4rem);
+  font-size: clamp(0.5rem, 0.3rem + 3vw, 1.4rem);
   font-weight: 500;
   color: ${ ({theme}) => theme.COLORS.TEXT };
 
@@ -26,6 +26,6 @@ export const Container = styled.button`
   }
 
   > svg {
-    font-size: 2rem;
+    font-size: clamp(1rem, 0.5rem + 2vw, 2rem);
   }
 `;
