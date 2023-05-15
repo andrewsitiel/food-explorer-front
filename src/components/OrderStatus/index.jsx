@@ -7,7 +7,7 @@ export function OrderStatus() {
   const [orderStatus, setOrderStatus] = useState("Pendente");
   const menu = document.querySelector("td menu");
   let current = 0;
-
+  const isAdmin = false;
 
   function toggleStatusMenu() {
     isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true);
@@ -66,7 +66,8 @@ export function OrderStatus() {
     <>
       <Container
         orderStatus={orderStatus}
-        onClick={toggleStatusMenu}
+        IsAdmin={isAdmin}
+        onClick={() => { isAdmin && toggleStatusMenu() }}
         onFocus={(e) => { toggleStatusMenu() }}
         tabIndex="0"
         aria-label="select input"
@@ -75,38 +76,40 @@ export function OrderStatus() {
           {orderStatus}
         </p>
 
-        <IoIosArrowDown />
+        {isAdmin && <IoIosArrowDown />}
       </Container>
 
-      <Menu
-        isMenuOpen={isMenuOpen}
-        tabIndex="-1"
-        onKeyDown={(e) => { handleKeyDown(e.code) }}
-      >
-        <span
-          onClick={() => { setOrderStatus("Pendente") }}
-          onKeyDown={(event) => { handleInputValue(event) }}
-          tabIndex="0"
-        >
-          Pendente
-        </span>
-
-        <span
-          onClick={() => { setOrderStatus("Preparando") }}
-          onKeyDown={(event) => { handleInputValue(event) }}
+      {isAdmin &&
+        <Menu
+          isMenuOpen={isMenuOpen}
           tabIndex="-1"
+          onKeyDown={(e) => { handleKeyDown(e.code) }}
         >
-          Preparando
-        </span>
+          <span
+            onClick={() => { setOrderStatus("Pendente") }}
+            onKeyDown={(event) => { handleInputValue(event) }}
+            tabIndex="0"
+          >
+            Pendente
+          </span>
 
-        <span
-          onClick={() => { setOrderStatus("Entregue") }}
-          onKeyDown={(event) => { handleInputValue(event) }}
-          tabIndex="-1"
-        >
-          Entregue
-        </span>
-      </Menu>
+          <span
+            onClick={() => { setOrderStatus("Preparando") }}
+            onKeyDown={(event) => { handleInputValue(event) }}
+            tabIndex="-1"
+          >
+            Preparando
+          </span>
+
+          <span
+            onClick={() => { setOrderStatus("Entregue") }}
+            onKeyDown={(event) => { handleInputValue(event) }}
+            tabIndex="-1"
+          >
+            Entregue
+          </span>
+        </Menu>
+      }
     </>
   )
 }

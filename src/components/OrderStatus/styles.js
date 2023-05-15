@@ -13,11 +13,11 @@ export const Container = styled.div`
 
   position: relative;
   
-  padding: 1.9rem 1rem 1.9rem 3.1rem;
-  border: 1px solid  ${ ({theme}) => theme.COLORS.TEXT_TRANSPARENT };
+  padding: ${ ({IsAdmin}) => IsAdmin ? "1.9rem 1rem 1.9rem 3.1rem" : "0rem"};
+  border: ${ ({IsAdmin,theme}) => IsAdmin ? `1px solid ${theme.COLORS.TEXT_TRANSPARENT}`: "none"};
   border-radius: 5px;
 
-  cursor: pointer;
+  cursor: ${ ({IsAdmin}) => IsAdmin ? "pointer" : "auto"};
 
   &:before {
     content: "";
