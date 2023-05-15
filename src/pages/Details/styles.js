@@ -93,7 +93,10 @@ export const DESCRIPTION = styled.div`
   }
   
   > div:nth-child(4) {
+    width: 100%;
+
     display: flex;
+    justify-content: center;
     align-items: center;
 
     > button {
@@ -123,6 +126,10 @@ export const DESCRIPTION = styled.div`
 
   @media(min-width: 900px) {
     align-items: flex-start;
+
+    > div:nth-child(4) {
+      justify-content: flex-start;
+    }
 
     > h3, p {
       text-align: left;
