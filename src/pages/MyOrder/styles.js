@@ -67,9 +67,9 @@ export const ListItem = styled.li`
     }
 
     > div {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     
     > h4 {
       font-family: ${({theme}) => theme.FONTS.TITLE};

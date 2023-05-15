@@ -92,7 +92,7 @@ export function MyOrder() {
         <section>
           <h3>Pagamento</h3>
 
-          <Payment orderStatus={"Entregue"} />
+          <Payment />
         </section>
       </main>
       <Footer></Footer>

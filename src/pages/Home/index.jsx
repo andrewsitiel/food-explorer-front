@@ -71,32 +71,32 @@ export function Home() {
           <Slider
             Items={[
               {
-                name: "Prugna Pie >",
+                name: "Prugna Pie",
                 description: "Torta de ameixa com massa amanteigada, polvilho em açúcar.",
                 price: String(32).split(".")
               },
               {
-                name: "Prugna Pie >",
+                name: "Prugna Pie",
                 description: "Torta de ameixa com massa amanteigada, polvilho em açúcar.",
                 price: String(32.97).split(".")
               },
               {
-                name: "Prugna Pie >",
+                name: "Prugna Pie",
                 description: "Torta de ameixa com massa amanteigada, polvilho em açúcar.",
                 price: String(32.97).split(".")
               },
               {
-                name: "Prugna Pie >",
+                name: "Prugna Pie",
                 description: "Torta de ameixa com massa amanteigada, polvilho em açúcar.",
                 price: String(32.97).split(".")
               },
               {
-                name: "Prugna Pie >",
+                name: "Prugna Pie",
                 description: "Torta de ameixa com massa amanteigada, polvilho em açúcar.",
                 price: String(32.97).split(".")
               },
               {
-                name: "Prugna Pie >",
+                name: "Prugna Pie",
                 description: "Torta de ameixa com massa amanteigada, polvilho em açúcar.",
                 price: String(32.97).split(".")
               }
