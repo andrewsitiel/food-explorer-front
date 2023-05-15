@@ -25,17 +25,16 @@ export const Container = styled.div`
     }
 
     > div {
-      transform: translateY(46px);
 
       > h3 {
-        font: 500 clamp(20px, 5px + 2vw, 24px) "Poppins", sans-serif;
+        font: 500 clamp(1.5rem, 0.1rem + 2vw, 4rem) "Poppins", sans-serif;
         color: ${ ({theme}) => theme.COLORS.TEXT };
         
         margin-bottom: 8px;
       }
       
       > p {
-        font: 400 clamp(12px, 6px + 2vw, 18px) "Poppins", sans-serif;
+        font: 400 clamp(0.9rem, 0.1rem + 2vw, 1.6rem) "Poppins", sans-serif;
         color: ${ ({theme}) => theme.COLORS.TEXT };
       }
     }
@@ -69,8 +68,14 @@ export const Container = styled.div`
     > main {
       padding-inline: clamp(7rem, 23px + 7vw, 12.3rem);
 
-      > div > img {
-        transform: translateX(-70px);
+      > div {
+        > img {
+          transform: translateX(-70px);
+        }
+
+        > div {
+          transform: translateY(46px);
+        }
       }
     }
   }
