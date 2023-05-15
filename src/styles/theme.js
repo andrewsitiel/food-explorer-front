@@ -22,7 +22,7 @@ export default {
 
   FONTS: {
     TEXT: "'Roboto', sans-serif",
-    TITLES: "'Poppins', sans-serif",
+    TITLE: "'Poppins', sans-serif",
     FOOTER: "'DM Sans', sans-serif;"
   },
 }
