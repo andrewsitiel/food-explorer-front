@@ -18,7 +18,7 @@ export const Container = styled.div`
   
     > h4 {
       font-family: ${({theme}) => theme.FONTS.TITLE};
-      font-size: clamp(1.2rem, 0.6rem+ 2vw, 1.8rem);
+      font-size: clamp(1.2rem, 0.6rem + 2vw, 1.8rem);
       font-weight: 400;
     }
   }
