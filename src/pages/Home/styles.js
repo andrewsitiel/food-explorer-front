@@ -26,15 +26,19 @@ export const Container = styled.div`
 
     > div {
 
-      > h3 {
-        font: 500 clamp(1.5rem, 0.1rem + 2vw, 4rem) "Poppins", sans-serif;
+      > h3 {  
+        font-family: ${({theme}) => theme.FONTS.TITLE};
+        font-size: clamp(1.5rem, 0.1rem + 2vw, 4rem);
+        font-weight: 500;
         color: ${ ({theme}) => theme.COLORS.TEXT };
         
         margin-bottom: 8px;
       }
       
       > p {
-        font: 400 clamp(0.9rem, 0.1rem + 2vw, 1.6rem) "Poppins", sans-serif;
+        font-family: ${({theme}) => theme.FONTS.TITLE};
+        font-size: clamp(0.9rem, 0.1rem + 2vw, 1.6rem);
+        font-weight: 400;
         color: ${ ({theme}) => theme.COLORS.TEXT };
       }
     }
@@ -58,8 +62,11 @@ export const Container = styled.div`
     margin-top: 6rem;
 
     > h4 {
-      font: 500 clamp(19px, 3px + 5vw, 32px) "Poppins", sans-serif;
+      font-family: ${({theme}) => theme.FONTS.TITLE};
+      font-size: clamp(1.9rem, 0.3rem + 5vw, 3.2rem);
+      font-weight: 500;
       color: ${({theme}) => theme.COLORS.TEXT};
+      
       margin-bottom: 3.9rem;
     }
   }

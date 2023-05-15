@@ -5,8 +5,11 @@ export const Container = styled.table`
   margin: auto;
 
   text-align: left;
+  
+  font-family: ${({theme}) => theme.FONTS.TEXT};
+  font-size: clamp(1rem, 0.3rem + 2vw, 1.4rem);
+  font-weight: 400;
   color: ${ ({theme}) => theme.COLORS.TEXT };
-  font: 400 clamp(1rem, 0.3rem + 2vw, 1.4rem) "Roboto", sans-serif;
 
   border-radius: 6px 6px 0px 0px;
 

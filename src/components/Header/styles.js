@@ -21,8 +21,11 @@ export const Container = styled.header`
     gap: 1.9rem;
     
     > h1 {
-      font: 700 clamp(19px, 7px + 3vw, 25px) "Roboto", sans-serif;
+      font-family: ${({theme}) => theme.FONTS.TEXT};
+      font-size: clamp(1.9rem, 0.7rem + 3vw, 2.5rem);
+      font-weight: 700;
       color: ${ ({theme}) => theme.COLORS.TEXT };
+      
       white-space: nowrap;
     }
     
@@ -60,8 +63,11 @@ export const Menu = styled.menu`
     grid-area: favorites;
     justify-self: center;
 
-    font: 400 clamp(12px, 1px + 2vw, 16px) "Roboto", sans-serif;
+    font-family: ${({theme}) => theme.FONTS.TEXT};
+    font-size: clamp(1.2rem, 0.1rem + 2vw, 1.6rem);
+    font-weight: 400;
     color: ${ ({theme}) => theme.COLORS.TEXT_SECONDARY };
+    
     white-space: nowrap;
   }
 

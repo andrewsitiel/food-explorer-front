@@ -13,7 +13,9 @@ export const Main = styled.main`
   overflow: auto;
 
   h2 {
-    font: 500 clamp(19px, 3px + 5vw, 32px) "Poppins", sans-serif;
+    font-family: ${({theme}) => theme.FONTS.TITLE};
+    font-size: clamp(1.9rem, 0.3rem + 5vw, 3.2rem);
+    font-weight: 500;
     color: ${ ({theme}) => theme.COLORS.TEXT };
 
     margin: 0rem 0rem 3.4rem 3.2rem;

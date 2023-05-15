@@ -15,7 +15,9 @@ export const Container = styled.div`
       border: none;
       background: transparent;
 
-      font: ${ ({theme}) => theme.FONTS.TEXT_SM };
+      font-family: ${({theme}) => theme.FONTS.TEXT};
+      font-size: clamp(1rem, 0.1rem + 3vw, 1.4rem);
+      font-weight: 400;
       color: ${ ({theme}) => theme.COLORS.TEXT };
 
       &:-webkit-autofill {

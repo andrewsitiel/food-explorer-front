@@ -16,6 +16,8 @@ svg {
 }
 
 p {
-  font: 400 2.4rem "Roboto", sans-serif;
+  font-family: ${ ({theme}) => theme.FONTS.TEXT};
+  font-weight: 400;
+  font-size: clamp(2rem, 0.5rem + 2vw, 2.4rem);
   color: ${ ({theme}) => theme.COLORS.LABEL}; 
 }`;

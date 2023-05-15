@@ -25,7 +25,9 @@ export const Header = styled.header`
   margin-top: 7rem;
 
   > h1 {
-    font: 700 clamp(30px, 5px + 5vw, 43px) "Roboto", sans-serif;
+    font-family: ${({theme}) => theme.FONTS.TEXT};
+    font-size: clamp(3rem, 0.5rem + 5vw, 4.3rem);
+    font-weight: 700;
     color: ${ ({theme}) => theme.COLORS.TEXT };
   }
 
@@ -54,7 +56,9 @@ export const Main = styled.main`
   gap: 3.2rem;
 
   > h2 {
-    font: 500 clamp(19px, 3px + 5vw, 32px) "Poppins", sans-serif;
+    font-family: ${({theme}) => theme.FONTS.TITLE};
+    font-size: clamp(1.9rem, 0.3rem + 5vw, 3.2rem);
+    font-weight: 500;
     color: ${ ({theme}) => theme.COLORS.TEXT };
 
     text-align: center;
@@ -62,7 +66,9 @@ export const Main = styled.main`
 `;
 
 export const Anchor = styled(Link)`
-  font: 500 clamp(10px, 5px + 2vw, 14px) "Poppins", sans-serif;
+  font-family: ${({theme}) => theme.FONTS.TITLE};
+  font-size: clamp(1rem, 0.5rem + 2vw, 1.4rem);
+  font-weight: 500;
   color: ${ ({theme}) => theme.COLORS.TEXT };
 
   text-decoration: none;

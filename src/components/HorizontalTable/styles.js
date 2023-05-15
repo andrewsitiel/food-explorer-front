@@ -6,7 +6,10 @@ export const Container = styled.table`
 
   text-align: left;
   color: ${ ({theme}) => theme.COLORS.TEXT };
-  font: 400 1.4rem "Roboto", sans-serif;
+
+  font-family: ${ ({theme}) => theme.FONTS.TEXT };
+  font-size: clamp(0.5rem, 0.3rem + 1vw, 1.4rem);
+  font-weight: 400;
 
   border-radius: 6px 6px 0px 0px;
 

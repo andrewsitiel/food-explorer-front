@@ -19,7 +19,9 @@ export const Main = styled.main`
     justify-self: center;
     margin-left: 1.5rem;
 
-    font: 500 clamp(20px, 5px + 2vw, 24px) "Poppins", sans-serif;
+    font-family: ${({theme}) => theme.FONTS.TITLE};
+    font-size: clamp(2rem, 0.5rem + 2vw, 2.4rem);
+    font-weight: 500;
 
     position: relative;
 
@@ -78,7 +80,10 @@ export const DESCRIPTION = styled.div`
   align-items: center;
 
   h3 {
-    font: 500 clamp(52px, 3px + 4vw, 56px) "Poppins", sans-serif;
+    font-family: ${({theme}) => theme.FONTS.TITLE};
+    font-size: clamp(5.2rem, 0.3rem + 4vw, 5.6rem);
+    font-weight: 500;
+    
     text-align: center;
     margin-bottom: 0.8rem;
   }
@@ -96,7 +101,9 @@ export const DESCRIPTION = styled.div`
     }
 
     > span:nth-child(1) {
-      font: 400 clamp(19px, 3px + 5vw, 32px) "Roboto", sans-serif;
+      font-family: ${({theme}) => theme.FONTS.TEXT};
+      font-size: clamp(1.9rem, 0.3rem + 5vw, 3.2rem);
+      font-weight: 400;
       color: ${ ({theme}) => theme.COLORS.PRICE };
     }
 
@@ -106,7 +113,10 @@ export const DESCRIPTION = styled.div`
   }
   
   p {
-    font: 400 clamp(20px, 3px + 5vw, 24px) "Poppins", sans-serif;
+    font-family: ${({theme}) => theme.FONTS.TITLE};
+    font-size: clamp(2rem, 0.3rem + 5vw, 2.4rem) ;
+    font-weight: 400;
+
     text-align: center;
   }
 

@@ -23,21 +23,27 @@ export const Container = styled.div`
   }
 
   > h4 {
-    font: 500 clamp(20px, 5px + 2vw, 24px) "Poppins", sans-serif;
-    color: ${ ({theme}) => theme.FONTS.TEXT };
+    font-family: ${({theme}) => theme.FONTS.TITLE};
+    font-size: clamp(2rem, 0.5rem + 2vw, 2.4rem);
     font-weight: 700;
+    color: ${ ({theme}) => theme.FONTS.TEXT };
 
     text-align: center;
   }
 
   > p {
-    font: 400 clamp(10px, 1px + 3vw, 14px) "Roboto", sans-serif;
-    color: ${({theme}) => theme.COLORS.LABEL};
-    text-align: center;
+      font-family: ${({theme}) => theme.FONTS.TEXT};
+      font-size: clamp(1rem, 0.1rem + 3vw, 1.4rem);
+      font-weight: 400;
+      color: ${({theme}) => theme.COLORS.LABEL};
+      
+      text-align: center;
   }
 
   > span {
-      font: 400 clamp(19px, 3px + 5vw, 32px) "Roboto", sans-serif;
+      font-family: ${({theme}) => theme.FONTS.TEXT};
+      font-size: clamp(1.9rem, 0.3rem + 5vw, 3.2rem);
+      font-weight: 400;
       color: ${ ({theme}) => theme.COLORS.PRICE };
   }
 

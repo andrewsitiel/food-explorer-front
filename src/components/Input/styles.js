@@ -25,7 +25,9 @@ export const Container = styled.div`
       border: none;
       background: transparent;
 
-      font: ${ ({theme}) => theme.FONTS.TEXT_SM };
+      font-family: ${({theme}) => theme.FONTS.TEXT};
+      font-size: clamp(1rem, 0.1rem + 3vw, 1.4rem);
+      font-weight: 400;
       color: ${ ({theme}) => theme.COLORS.TEXT };
 
       &:-webkit-autofill {
@@ -46,7 +48,9 @@ export const Container = styled.div`
   }
 
   > label {
-    font: 400 clamp(12px, 1px + 2vw, 16px) "Roboto", sans-serif;
+    font-family: ${({theme}) => theme.FONTS.TEXT};
+    font-size: clamp(1.2rem, 0.1rem + 2vw, 1.6rem);
+    font-weight: 400;
     color: ${ ({theme}) => theme.COLORS.LABEL };
   }
 `;

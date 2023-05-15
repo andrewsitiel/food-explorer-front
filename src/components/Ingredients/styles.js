@@ -17,7 +17,9 @@ export const Container = styled.div`
     gap: 0.8rem;
   
     > h4 {
-      font: 400 clamp(12px, 6px + 2vw, 18px) "Poppins", sans-serif;
+      font-family: ${({theme}) => theme.FONTS.TITLE};
+      font-size: clamp(1.2rem, 0.6rem+ 2vw, 1.8rem);
+      font-weight: 400;
     }
   }
 `;

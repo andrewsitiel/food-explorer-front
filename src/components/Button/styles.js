@@ -13,7 +13,9 @@ export const Container = styled.button`
   border-radius: 5px;
   background-color: ${ ({theme}) => theme.COLORS.BUTTON };
 
-  font: 500 clamp(5px, 3px + 1vw, 14px) "Poppins", sans-serif;
+  font-family: ${({theme}) => theme.FONTS.TITLE};
+  font-size: clamp(0.5rem, 0.3rem + 1vw, 1.4rem);
+  font-weight: 500;
   color: ${ ({theme}) => theme.COLORS.TEXT };
 
   transition: background-color 150ms;

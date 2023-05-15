@@ -67,7 +67,9 @@ export const Main = styled.main`
     justify-self: start;
     margin-left: 1.5rem;
 
-    font: 500 clamp(20px, 5px + 2vw, 24px) "Poppins", sans-serif;
+    font-family: ${({theme}) => theme.FONTS.TITLE};
+    font-size: clamp(2rem, 0.5rem + 2vw, 2.4rem);
+    font-weight: 500;
     color: ${ ({theme}) => theme.COLORS.TEXT };
 
     position: relative;
@@ -90,19 +92,25 @@ export const Main = styled.main`
   }
 
   > h3 {
-    font: 500 clamp(19px, 3px + 5vw, 32px) "Poppins", sans-serif;
+    font-family: ${({theme}) => theme.FONTS.TITLE};
+    font-size: clamp(1.9rem, 0.3rem + 5vw, 3.2rem);
+    font-weight: 500;
     color: ${ ({theme}) => theme.COLORS.TEXT };
   }
 
   > div > label {
-      font: 500 clamp(10px, 5px + 2vw, 14px) "Poppins", sans-serif;
+      font-family: ${({theme}) => theme.FONTS.TITLE};
+      font-size: clamp(1rem, 0.5rem + 2vw, 1.4rem);
+      font-weight: 500;
       color: ${ ({theme}) => theme.COLORS.LABEL };
 
       margin-bottom: 1rem;
   }
 
   > div h4 {
-      font: 500 clamp(10px, 5px + 2vw, 14px) "Poppins", sans-serif;
+      font-family: ${({theme}) => theme.FONTS.TITLE};
+      font-size: clamp(1rem, 0.5rem + 2vw, 1.4rem);
+      font-weight: 500;
       color: ${ ({theme}) => theme.COLORS.LABEL };
       
       margin-bottom: 0.8rem;
@@ -113,8 +121,11 @@ export const Main = styled.main`
     cursor: pointer;
 
     label {
-      font: ${ ({theme}) => theme.FONTS.TEXT_SM };
+      font-family: ${({theme}) => theme.FONTS.TEXT};
+      font-size: clamp(1rem, 0.1rem + 3vw, 1.4rem);
+      font-weight: 400;
       color: ${ ({theme}) => theme.COLORS.LABEL };
+
       white-space: nowrap;
 
       cursor: pointer;
@@ -192,7 +203,9 @@ export const Main = styled.main`
       border: 1px solid ${ ({theme}) => theme.COLORS.TEXT };
       border-radius: 5px;
 
-      font: ${ ({theme}) => theme.FONTS.TEXT_SM };
+      font-family: ${({theme}) => theme.FONTS.TEXT};
+      font-size: clamp(1rem, 0.1rem + 3vw, 1.4rem);
+      font-weight: 400;
       color: ${ ({theme}) => theme.COLORS.TEXT };
 
       resize: none;
@@ -220,7 +233,9 @@ export const Main = styled.main`
       border: solid 1px ${ ({theme}) => theme.COLORS.TEXT };
       border-radius: 5px;
 
-      font: 500 clamp(10px, 5px + 2vw, 14px) "Poppins", sans-serif;
+      font-family: ${({theme}) => theme.FONTS.TITLE};
+      font-size: clamp(1rem, 0.5rem + 2vw, 1.4rem);
+      font-weight: 500;
       color: ${ ({theme}) => theme.COLORS.TEXT };
 
       cursor: pointer;
