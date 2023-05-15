@@ -16,7 +16,7 @@ export default {
     TEXT_SECONDARY: "hsla(240,9.09%,89.22%, 1)",
     TEXT_TRANSPARENT: "hsla(0, 0%, 100%, 0.3)",
 
-    LABEL: " hsla(240, 7%, 78%, 1)",
+    LABEL: " hsla(240, 7%, 84%, 1)",
     PRICE: "hsla(186, 100%, 75%, 1)",
   },
 
