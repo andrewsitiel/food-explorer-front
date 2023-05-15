@@ -37,7 +37,7 @@ export const Container = styled.div`
       
       > p {
         font-family: ${({theme}) => theme.FONTS.TITLE};
-        font-size: clamp(0.9rem, 0.1rem + 2vw, 1.6rem);
+        font-size: clamp(0.9rem, 0.1rem + 1vw, 1.6rem);
         font-weight: 400;
         color: ${ ({theme}) => theme.COLORS.TEXT };
       }
