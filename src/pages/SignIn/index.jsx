@@ -1,8 +1,7 @@
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
-import { Container, Header, Main } from "./styles";
+import { Container, Header, Main, Anchor } from "./styles";
 import FoodExplorerIcon from "../../assets/Polygon.svg";
-
 
 export function SignIn() {
   return (
@@ -24,7 +23,7 @@ export function SignIn() {
 
         <Button title="Entrar" />
 
-        <a>Criar conta</a>
+        <Anchor to={"/register"}>Criar conta</Anchor>
       </Main>
     </Container>
   )

@@ -1,15 +1,11 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  
-  a {
-    font: 500 clamp(10px, 5px + 2vw, 14px) "Poppins", sans-serif;
-    color: ${ ({theme}) => theme.COLORS.TEXT };
-  }
 
   @media(min-width: 900px) {
     height: 100vh;
@@ -63,4 +59,11 @@ export const Main = styled.main`
 
     text-align: center;
   }
-`; 
+`;
+
+export const Anchor = styled(Link)`
+  font: 500 clamp(10px, 5px + 2vw, 14px) "Poppins", sans-serif;
+  color: ${ ({theme}) => theme.COLORS.TEXT };
+
+  text-decoration: none;
+`;
