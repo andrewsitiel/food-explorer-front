@@ -36,8 +36,11 @@ export const Container = styled.footer`
   };
 
   p {
-    font: 400 clamp(12px, 1px + 2vw, 16px) "Roboto", sans-serif;
+    font-family: ${({theme}) => theme.FONTS.FOOTER};
+    font-size: clamp(12px, 1px + 2vw, 16px);
+    font-weight: 400;
     color: ${ ({theme}) => theme.COLORS.TEXT };
+    
     white-space: wrap;
   };
 
