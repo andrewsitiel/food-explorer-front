@@ -21,7 +21,7 @@ export const Container = styled.footer`
     gap: 1.9rem;
     
     > h1 {
-      font: ${({theme}) => theme.FONTS.TEXT};
+      font-family: ${({theme}) => theme.FONTS.TEXT};
       font-size: clamp(1.9rem, 0.7rem + 3vw, 2.5rem);
       font-weight: 700;
       color: ${ ({theme}) => theme.COLORS.TEXT_TRANSPARENT };
