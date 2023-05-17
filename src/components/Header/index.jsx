@@ -1,6 +1,7 @@
 import FoodExplorerIcon from "../../assets/Polygon.svg";
-import { Container, Menu, MenuButton } from "./styles";
+import { Container, Menu, MenuButton, Anchor } from "./styles";
 import { IoReceiptOutline } from "react-icons/io5"
+import { useNavigate } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
 import { RxExit } from "react-icons/rx";
 import { Button } from "../Button";
@@ -9,6 +10,7 @@ import { useState } from "react";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   function openAndCloseMenu() {
     isMenuOpen == false ? setIsMenuOpen(true) : setIsMenuOpen(false);
@@ -18,9 +20,9 @@ export function Header() {
     <Container>
       <div>
         <img src={FoodExplorerIcon} alt="A blue polygon" />
-        <h1>
+        <Anchor to={"/"}>
           Food Explorer
-        </h1>
+        </Anchor>
       </div>
 
       <Menu isMenuOpen={isMenuOpen}>
@@ -28,7 +30,7 @@ export function Header() {
 
         <Input Placeholder="Busque pelas opções de pratos" Type="text" Icon={<CiSearch />} />
 
-        <Button title="Meus pedidos" orders="0" Icon={IoReceiptOutline} />
+        <Button title="Meus pedidos" orders="0" Icon={IoReceiptOutline} onClick={() => { navigate("/my-order") }} />
 
         <button> <RxExit /> </button>
       </Menu>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.header`  
   width: 100vw;
@@ -19,15 +20,6 @@ export const Container = styled.header`
     align-items: center;
     justify-content: center;
     gap: 1.9rem;
-    
-    > h1 {
-      font-family: ${({theme}) => theme.FONTS.TEXT};
-      font-size: clamp(1.9rem, 0.7rem + 3vw, 2.5rem);
-      font-weight: 700;
-      color: ${ ({theme}) => theme.COLORS.TEXT };
-      
-      white-space: nowrap;
-    }
     
     > img {
       width: clamp(19px, 1px + 7vw, 30px);
@@ -59,7 +51,9 @@ export const Menu = styled.menu`
 
   visibility: ${ ({ isMenuOpen }) => isMenuOpen ? "visible" : "hidden" };
 
-  a {
+  > a {
+    background: none;
+    border: none;
     grid-area: favorites;
     justify-self: center;
 
@@ -83,11 +77,10 @@ export const Menu = styled.menu`
       background: ${ ({theme}) => theme.COLORS.BACKGROUND_LIGHT };
     }
   }
-    
-  div + button {
-    grid-area: orders;
+    > button {
+    grid-area: orders; 
     max-width: 21.6rem;
-  }
+    }
 
   button + button {
     grid-area: exit;
@@ -222,4 +215,14 @@ export const MenuButton = styled.button`
 
     overflow: hidden;
   }
+`;
+
+export const Anchor = styled(Link)`
+  font-family: ${({theme}) => theme.FONTS.TEXT};
+  font-size: clamp(1.9rem, 0.7rem + 3vw, 2.5rem);
+  font-weight: 700;
+  color: ${ ({theme}) => theme.COLORS.TEXT };
+      
+  white-space: nowrap;
+  text-decoration: none;
 `;
