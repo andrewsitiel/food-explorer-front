@@ -1,15 +1,15 @@
 import FoodExplorerIcon from "../../assets/Polygon_Gray.svg";
-import { Container } from "./styles.js";
+import { Container, Anchor } from "./styles.js";
 
 export function Footer() {
   return (
     <Container>
-      <div>
+      <Anchor to={"/"}>
         <img src={FoodExplorerIcon} alt="A blue polygon" />
         <h1>
           Food Explorer
         </h1>
-      </div>
+      </Anchor>
 
       <p>
         © 2022 - Todos os direitos reservados.
