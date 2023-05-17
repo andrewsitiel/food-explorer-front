@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const Container = styled.div`
+export const Container = styled(Link)`
   width: clamp(25rem, 9rem + 21vw, 30rem);
   height: clamp(45rem, 10rem + 30vw, 51.2rem);
   padding: 5.6rem 4rem 4rem 4rem;
@@ -16,6 +17,7 @@ export const Container = styled.div`
   gap: 1.6rem;
 
   position: relative;
+  text-decoration: none;
   
   > img {
     width: clamp(15rem, 1rem + 13vw, 17.6rem);

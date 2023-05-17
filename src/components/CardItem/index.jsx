@@ -14,7 +14,7 @@ export function CardItem({ item }) {
   }
 
   return (
-    <Container>
+    <Container to={"/details"}>
       <Heart
         onClick={() => handleClickOnHeart()}
         IsFilled={HeartIsFilled}
