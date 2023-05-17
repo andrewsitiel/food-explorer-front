@@ -1,10 +1,10 @@
+import { Container, Main, DESCRIPTION, Anchor } from "./styles";
 import { ItemsAmount } from "../../components/ItemsAmount";
 import { Ingredients } from "../../components/Ingredients";
 import { IoReceiptOutline } from "react-icons/io5"
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
 import { Footer } from "../../components/Footer";
-import { Container, Main, DESCRIPTION } from "./styles";
 
 import DishImage from "../../assets/Mask group.png";
 
@@ -14,7 +14,7 @@ export function Details() {
       <Header />
 
       <Main>
-        <a>Voltar</a>
+        <Anchor to={"/"}>Voltar</Anchor>
 
         <img src={DishImage} alt="Dish's image" />
 
