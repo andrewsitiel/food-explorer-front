@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "../Button";
 import { ItemsAmount } from "../ItemsAmount";
 import { HiOutlineHeart } from "react-icons/hi";
-import { Container, Heart } from "./styles";
+import { Container, Heart, Anchor } from "./styles";
 
 import DishImage from "../../assets/Mask group.png";
 
@@ -14,7 +14,7 @@ export function CardItem({ item }) {
   }
 
   return (
-    <Container to={"/details"}>
+    <Container>
       <Heart
         onClick={() => handleClickOnHeart()}
         IsFilled={HeartIsFilled}
@@ -24,7 +24,7 @@ export function CardItem({ item }) {
 
       <img src={DishImage} alt={`Foto de um(a) ${item.name}`} />
 
-      <h4>{item.name + " >"} </h4>
+      <Anchor to={"/details"}>{item.name + " >"} </Anchor>
       <p>
         {item.description}
       </p>

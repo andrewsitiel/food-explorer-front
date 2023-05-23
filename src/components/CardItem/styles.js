@@ -1,14 +1,13 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Container = styled(Link)`
+export const Container = styled.div`
   width: clamp(25rem, 9rem + 21vw, 30rem);
   height: clamp(45rem, 10rem + 30vw, 51.2rem);
   padding: 5.6rem 4rem 4rem 4rem;
   border-radius: 8px;
 
   background-color: ${ ({theme}) => theme.COLORS.TRANSPARENT };
-  color: ${ ({theme}) => theme.COLORS.TEXT };
 
   display: flex;
   flex-direction: column;
@@ -17,20 +16,10 @@ export const Container = styled(Link)`
   gap: 1.6rem;
 
   position: relative;
-  text-decoration: none;
   
   > img {
     width: clamp(15rem, 1rem + 13vw, 17.6rem);
     max-height: 17.6rem;
-  }
-
-  > h4 {
-    font-family: ${({theme}) => theme.FONTS.TITLE};
-    font-size: clamp(2rem, 0.5rem + 2vw, 2.4rem);
-    font-weight: 700;
-    color: ${ ({theme}) => theme.FONTS.TEXT };
-
-    text-align: center;
   }
 
   > p {
@@ -88,4 +77,14 @@ export const Heart = styled.button`
     color: ${({theme}) => theme.COLORS.TEXT};
     fill: ${ ({IsFilled, theme}) => IsFilled ? theme.COLORS.TEXT : "none"};
   }
+`;
+
+export const Anchor = styled(Link)`
+  font-family: ${({theme}) => theme.FONTS.TITLE};
+  font-size: clamp(2rem, 0.5rem + 2vw, 2.4rem);
+  font-weight: 700;
+  color: ${ ({theme}) => theme.COLORS.TEXT };
+
+  text-align: center;
+  text-decoration: none;
 `;
