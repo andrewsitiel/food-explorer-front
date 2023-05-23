@@ -4,12 +4,15 @@ import { AuthServices } from "./authHook";
 const AuthContext = createContext({});
 
 function AuthProvider({ children }) {
-  const { createUser } = AuthServices();
+  const { user, createUser, createAccess, removeAccess } = AuthServices();
 
   return (
     <AuthContext.Provider
       value={{
-        createUser
+        user,
+        createUser,
+        createAccess,
+        removeAccess
       }}
     >
       {children}
