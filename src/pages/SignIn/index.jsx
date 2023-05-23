@@ -1,9 +1,33 @@
+import { useState } from "react";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
-import { Container, Header, Main, Anchor } from "./styles";
 import FoodExplorerIcon from "../../assets/Polygon.svg";
+import { useAuth } from "../../hooks/authHookProvider";
+import { Container, Header, Main, Anchor } from "./styles";
 
 export function SignIn() {
+  const { createAccess } = useAuth();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  async function handleLogin() {
+    if (!email || !password) {
+      alert("Por favor, preencha todos os campos.")
+      return
+    }
+
+    try {
+
+      await createAccess({ email, password });
+
+    } catch (error) {
+      const { message } = error.response.data;
+
+      alert(message)
+    }
+
+  }
+
   return (
     <Container>
       <Header>
@@ -18,10 +42,23 @@ export function SignIn() {
           Faça Login
         </h2>
 
-        <Input Title="Email" Placeholder="Exemplo: exemplo@exemplo.com" Type="email" required />
-        <Input Title="Senha" Placeholder="Mínimo de 6 dígitos" Type="password" minlenght="6" required />
+        <Input
+          Title="Email"
+          Placeholder="Exemplo: exemplo@exemplo.com"
+          Type="email"
+          required
+          onChange={(e) => { setEmail(e.target.value) }}
+        />
+        <Input
+          Title="Senha"
+          Placeholder="Mínimo de 6 dígitos"
+          Type="password"
+          minlenght="6"
+          required
+          onChange={(e) => { setPassword(e.target.value) }}
+        />
 
-        <Button title="Entrar" />
+        <Button title="Entrar" onClick={handleLogin} />
 
         <Anchor to={"/register"}>Criar conta</Anchor>
       </Main>
