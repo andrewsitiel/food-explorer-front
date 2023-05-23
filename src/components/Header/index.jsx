@@ -7,13 +7,21 @@ import { RxExit } from "react-icons/rx";
 import { Button } from "../Button";
 import { Input } from "../Input";
 import { useState } from "react";
+import { useAuth } from "../../hooks/authHookProvider";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const { removeAccess } = useAuth()
 
   function openAndCloseMenu() {
     isMenuOpen == false ? setIsMenuOpen(true) : setIsMenuOpen(false);
+  }
+
+  function handleLogOut() {
+
+    navigate("/")
+    removeAccess();
   }
 
   return (
@@ -32,7 +40,7 @@ export function Header() {
 
         <Button title="Meus pedidos" orders="0" Icon={IoReceiptOutline} onClick={() => { navigate("/my-order") }} />
 
-        <button> <RxExit /> </button>
+        <button onClick={handleLogOut}> <RxExit /> </button>
       </Menu>
 
       <MenuButton onClick={openAndCloseMenu} isMenuOpen={isMenuOpen}>
