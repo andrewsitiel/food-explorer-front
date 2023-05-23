@@ -51,20 +51,6 @@ export const Menu = styled.menu`
 
   visibility: ${ ({ isMenuOpen }) => isMenuOpen ? "visible" : "hidden" };
 
-  > a {
-    background: none;
-    border: none;
-    grid-area: favorites;
-    justify-self: center;
-
-    font-family: ${({theme}) => theme.FONTS.TEXT};
-    font-size: clamp(1.2rem, 0.1rem + 2vw, 1.6rem);
-    font-weight: 400;
-    color: ${ ({theme}) => theme.COLORS.TEXT_SECONDARY };
-    
-    white-space: nowrap;
-  }
-
   div {
     grid-area: input;
 
@@ -77,10 +63,11 @@ export const Menu = styled.menu`
       background: ${ ({theme}) => theme.COLORS.BACKGROUND_LIGHT };
     }
   }
-    > button {
-    grid-area: orders; 
-    max-width: 21.6rem;
-    }
+
+  > div + button {
+  grid-area: orders; 
+  max-width: 21.6rem;
+  }
 
   button + button {
     grid-area: exit;
@@ -215,6 +202,21 @@ export const MenuButton = styled.button`
 
     overflow: hidden;
   }
+`;
+
+export const FavoritesButton = styled.button`
+    background: none;
+    border: none;
+    grid-area: favorites;
+    justify-self: center;
+
+    font-family: ${({theme}) => theme.FONTS.TEXT};
+    font-size: clamp(1.2rem, 0.1rem + 2vw, 1.6rem);
+    font-weight: 400;
+    color: ${ ({theme}) => theme.COLORS.TEXT_SECONDARY };
+    
+    white-space: nowrap;
+    cursor: pointer;
 `;
 
 export const Anchor = styled(Link)`
