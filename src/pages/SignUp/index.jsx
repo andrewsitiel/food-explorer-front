@@ -17,12 +17,12 @@ export function SignUp() {
 
   async function handleSubmit() {
 
-    try {
-      if (!name || !email || !password) {
-        alert("Por favor, preencha todos os campos.")
-        return
-      }
+    if (!name || !email || !password) {
+      alert("Por favor, preencha todos os campos.")
+      return
+    }
 
+    try {
       const { data } = await createUser({ name, email, password })
 
       alert(data.message)
