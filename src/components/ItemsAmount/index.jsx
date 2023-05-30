@@ -6,10 +6,10 @@ export function ItemsAmount() {
   const [dishAmount, setDishAmount] = useState(1)
 
   function reduceItemsAmount() {
-    if (dishAmount > 0) {
+    if (dishAmount > 1) {
       setDishAmount(dishAmount - 1)
     } else {
-      setDishAmount(0)
+      setDishAmount(1)
     }
   }
 
