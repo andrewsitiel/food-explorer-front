@@ -11,27 +11,46 @@ export function AuthServices() {
     const localStorageUser = localStorage.getItem("@foodexplorer:user");
     const localStorageToken = localStorage.getItem("@foodexplorer:token");
    
-
     if(localStorageUser && localStorageToken) {
       api.defaults.headers.common["Authorization"] = `Bearer ${localStorageToken}`;
       
-      setUser(localStorageUser);
+      setUser(JSON.parse(localStorageUser));
     }
 
   },[])
 
   async function createUser ({name, email, password}) {
-      return await api.post("/user",{name,email,password});
+    try {
+
+      return await api.post("/user", {name, email, password});
+   
+    } catch (error) {
+      if (error.message) {
+        alert(error.response.data.message)
+      } else {
+          alert("Não foi possível realizar o cadastro. Por favor, tente novamente mais tarde.")
+        }
+      }
   }
 
   async function createAccess({email, password}){
-    const {data} = await api.post("/access", {email, password});
-    
-    setUser(data.user);
-    api.defaults.headers.common["Authorization"] = `Bearer ${data.token}`;
 
-    localStorage.setItem("@foodexplorer:user", JSON.stringify(data.user));
-    localStorage.setItem("@foodexplorer:token", JSON.stringify(data.token));
+    try {
+      const {data} = await api.post("/access", {email, password});
+    
+      api.defaults.headers.common["Authorization"] = `Bearer ${data.token}`;
+      setUser(data.user);
+
+      localStorage.setItem("@foodexplorer:user", JSON.stringify(data.user));
+      localStorage.setItem("@foodexplorer:token", data.token);
+    } catch (error) {
+      if (error.message) {
+        alert(error.response.data.message)
+      } else {
+        alert("Não foi possível realizar o login. Por favor, tente novamente mais tarde.")
+      }
+    }
+    
   }
 
   async function removeAccess() {
