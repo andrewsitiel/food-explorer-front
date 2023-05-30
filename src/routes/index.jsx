@@ -1,8 +1,7 @@
+import { useAuth } from "../hooks/authHookProvider";
 import { BrowserRouter } from "react-router-dom";
-
 import { AuthRoutes } from "./auth.routes";
 import { AppRoutes } from "./app.routes";
-import { useAuth } from "../hooks/authHookProvider";
 
 export function Router() {
 
