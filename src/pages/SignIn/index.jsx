@@ -16,15 +16,7 @@ export function SignIn() {
       return
     }
 
-    try {
-
-      await createAccess({ email, password });
-
-    } catch (error) {
-      const { message } = error.response.data;
-
-      alert(message)
-    }
+    await createAccess({ email, password });
 
   }
 
