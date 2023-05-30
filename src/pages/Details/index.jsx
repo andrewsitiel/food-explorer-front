@@ -1,43 +1,62 @@
 import { Container, Main, DESCRIPTION, Anchor } from "./styles";
 import { ItemsAmount } from "../../components/ItemsAmount";
 import { Ingredients } from "../../components/Ingredients";
+import { formatPrice } from "../../utils/formatPrice";
 import { IoReceiptOutline } from "react-icons/io5"
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
 import { Footer } from "../../components/Footer";
-
-import DishImage from "../../assets/Mask group.png";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { api } from "../../services/api";
 
 export function Details() {
+  const [dish, setDish] = useState();
+  const { id: dishId } = useParams();
+
+  useEffect(() => {
+    async function getDish() {
+      try {
+        const { data } = await api.get(`/dishes/${dishId}`);
+
+        setDish(data.dish)
+
+      } catch (error) {
+        if (error.message) {
+          alert(error.response.data.message)
+
+        } else {
+          alert("Não foi possível carregar os detalhes do prato.")
+        }
+      }
+
+    }
+
+    getDish();
+
+  }, [])
+
   return (
     <Container>
       <Header />
 
-      <Main>
+      {dish && <Main>
         <Anchor to={"/"}>Voltar</Anchor>
 
-        <img src={DishImage} alt="Dish's image" />
+        <img src={`${api.defaults.baseURL}/files/${dish.image}`} alt={`Image of a ${dish.name}`} />
 
         <DESCRIPTION>
 
-          <h3>Salada Ravanello</h3>
+          <h3>{dish.name}</h3>
           <p>
-            Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
+            {dish.description}
           </p>
 
-          <Ingredients data={
-            [
-              { title: "tomate" },
-              { title: "alface" },
-              { title: "pão" },
-              { title: "cebola" },
-              { title: "limão" },
-            ]
-          }
+          <Ingredients Ingredients={dish.ingredients}
           />
 
           <div>
-            <span>R$00,00</span>
+            <span>{formatPrice(dish.price)}</span>
 
             <ItemsAmount />
 
@@ -45,8 +64,7 @@ export function Details() {
           </div>
 
         </DESCRIPTION>
-
-      </Main>
+      </Main>}
 
       <Footer />
     </ Container>
