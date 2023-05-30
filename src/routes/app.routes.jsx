@@ -7,13 +7,14 @@ import { Orders } from "../pages/Orders";
 import { CreateDish } from "../pages/CreateDish";
 
 export function AppRoutes() {
+
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/details" element={<Details />} />
+      <Route path="/details/:id" element={<Details />} />
       <Route path="/my-order" element={<MyOrder />} />
-      <Route path="orders" element={<Orders />} />
-      <Route path="create-dish" element={<CreateDish />} />
+      <Route path="/orders" element={<Orders />} />
+      <Route path="/create-dish" element={<CreateDish />} />
     </Routes>
   )
 } 
