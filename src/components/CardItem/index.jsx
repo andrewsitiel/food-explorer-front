@@ -3,8 +3,9 @@ import { Button } from "../Button";
 import { ItemsAmount } from "../ItemsAmount";
 import { HiOutlineHeart } from "react-icons/hi";
 import { Container, Heart, Anchor } from "./styles";
+import { formatPrice } from "../../utils/formatPrice";
 
-import DishImage from "../../assets/Mask group.png";
+import { api } from "../../services/api";
 
 export function CardItem({ item }) {
   const [HeartIsFilled, setHeartIsFilled] = useState(false);
@@ -22,23 +23,19 @@ export function CardItem({ item }) {
         {<HiOutlineHeart />}
       </Heart>
 
-      <img src={DishImage} alt={`Foto de um(a) ${item.name}`} />
+      <img src={`${api.defaults.baseURL}/files/${item.image}`} alt={`Foto de um(a) ${item.name}`} />
 
-      <Anchor to={"/details"}>{item.name + " >"} </Anchor>
+      <Anchor to={`/details/${item.id}`}>{item.name + " >"} </Anchor>
       <p>
         {item.description}
       </p>
       <span>
-        {"R$ "}
-        {item.price[0].padStart(2, "0")}
-        {","}
-        {item.price[1] && item.price[1].padEnd(2, "0") || "00"}
+        {formatPrice(item.price)}
       </span>
 
       <div>
         <ItemsAmount /><Button title="Incluir" />
       </div>
-
     </Container>
   )
 }
