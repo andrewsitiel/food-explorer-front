@@ -55,7 +55,9 @@ export function Slider({ Items }) {
         </SwiperButtonBackward>
 
         {
+          Items &&
           Items.map((item, index) => {
+
             return (
               <SwiperSlide key={index}>
 
