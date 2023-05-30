@@ -1,15 +1,15 @@
 import { Container } from "./styles";
 import ingredientImage from "../../assets/fruit.png";
 
-export function Ingredients({ data }) {
+export function Ingredients({ Ingredients }) {
   return (
     <Container>
       {
-        data.map((ingredient, index) => {
+        Ingredients.map((ingredient) => {
           return (
-            <div key={index}>
+            <div key={ingredient.id}>
               <img src={ingredientImage} alt="Image of a dish ingredient" />
-              <h4>{ingredient.title}</h4>
+              <h4>{ingredient.name}</h4>
             </div>
           )
         })
