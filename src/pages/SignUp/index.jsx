@@ -22,19 +22,12 @@ export function SignUp() {
       return
     }
 
-    try {
-      const { data } = await createUser({ name, email, password })
+    const { data } = await createUser({ name, email, password })
 
-      alert(data.message)
-      navigate("/")
+    alert(data.message)
+    navigate("/")
 
-      return
-    } catch (error) {
-      const { message } = error.response.data;
-
-      alert(message)
-    }
-
+    return
 
   }
 
