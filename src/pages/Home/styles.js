@@ -18,7 +18,7 @@ export const Container = styled.div`
     position: relative;
         
     > img {
-      width: clamp(10rem, 5rem + 46vw, 63.2rem);
+      width: clamp(10rem, 1rem + 46vw, 63.2rem);
 
       transform: translateX(0);
 
@@ -28,7 +28,7 @@ export const Container = styled.div`
 
       > h3 {  
         font-family: ${({theme}) => theme.FONTS.TITLE};
-        font-size: clamp(1.5rem, 0.1rem + 2vw, 4rem);
+        font-size: clamp(1.5rem, 0.5rem + 3vw, 4rem);
         font-weight: 500;
         color: ${ ({theme}) => theme.COLORS.TEXT };
         
@@ -37,7 +37,7 @@ export const Container = styled.div`
       
       > p {
         font-family: ${({theme}) => theme.FONTS.TITLE};
-        font-size: clamp(0.9rem, 0.1rem + 1vw, 1.6rem);
+        font-size: clamp(0.9rem, 0.1rem + 2vw, 1.6rem);
         font-weight: 400;
         color: ${ ({theme}) => theme.COLORS.TEXT };
       }
@@ -46,11 +46,11 @@ export const Container = styled.div`
     &:before {
       content: "";
       width: 100%;
-      height: clamp(65%, 100% - 30vw ,100%);
+      height: 100%;
 
       position: absolute;
-      top: 32%;
-      left: -5px;
+      top: 0;
+      left: 0;
       z-index: -100;
 
       background: linear-gradient(180deg, #091E26 0%, #00131C 100%);
@@ -82,6 +82,13 @@ export const Container = styled.div`
 
         > div {
           transform: translateY(46px);
+        }
+
+        &::before{
+          height: 65%;
+          position: absolute;
+          top: 32%;
+          left: -5px;
         }
       }
     }
