@@ -13,11 +13,13 @@ export const Main = styled.main`
   gap: 4.1rem;
   
   padding-inline: 1.9rem;
-  color: ${ ({theme}) => theme.COLORS.TEXT };
+  color: ${({ theme }) => theme.COLORS.TEXT};
 
   img {
     width: clamp(27rem, 20rem + 19vw, 38.9rem);
     max-width: 38.9rem;
+    max-height: 38.9rem;
+    border-radius: 50%;
 
     margin: auto;
   }
@@ -47,7 +49,7 @@ export const DESCRIPTION = styled.div`
   align-items: center;
 
   h3 {
-    font-family: ${({theme}) => theme.FONTS.TITLE};
+    font-family: ${({ theme }) => theme.FONTS.TITLE};
     font-size: clamp(5.2rem, 0.3rem + 4vw, 5.6rem);
     font-weight: 500;
     
@@ -71,10 +73,12 @@ export const DESCRIPTION = styled.div`
     }
 
     > span:nth-child(1) {
-      font-family: ${({theme}) => theme.FONTS.TEXT};
+      font-family: ${({ theme }) => theme.FONTS.TEXT};
       font-size: clamp(1.9rem, 0.3rem + 5vw, 3.2rem);
       font-weight: 400;
-      color: ${ ({theme}) => theme.COLORS.PRICE };
+      color: ${({ theme }) => theme.COLORS.PRICE};
+
+      white-space: nowrap;
     }
 
     > div {
@@ -83,7 +87,7 @@ export const DESCRIPTION = styled.div`
   }
   
   p {
-    font-family: ${({theme}) => theme.FONTS.TITLE};
+    font-family: ${({ theme }) => theme.FONTS.TITLE};
     font-size: clamp(2rem, 0.3rem + 5vw, 2.4rem) ;
     font-weight: 400;
 
@@ -109,10 +113,10 @@ export const Anchor = styled(Link)`
     justify-self: center;
     margin-left: 1.5rem;
 
-    font-family: ${({theme}) => theme.FONTS.TITLE};
+    font-family: ${({ theme }) => theme.FONTS.TITLE};
     font-size: clamp(2rem, 0.5rem + 2vw, 2.4rem);
     font-weight: 500;
-    color: ${ ({theme}) => theme.COLORS.TEXT };
+    color: ${({ theme }) => theme.COLORS.TEXT};
     text-decoration: none;
 
     position: relative;
@@ -126,8 +130,8 @@ export const Anchor = styled(Link)`
 
       width: 1.5rem;
       height: 1.5rem;
-      border-top: 1px solid ${ ({theme}) => theme.COLORS.TEXT };
-      border-left: 1px solid ${ ({theme}) => theme.COLORS.TEXT };
+      border-top: 1px solid ${({ theme }) => theme.COLORS.TEXT};
+      border-left: 1px solid ${({ theme }) => theme.COLORS.TEXT};
       
       transform: rotate(-45deg);
     }
