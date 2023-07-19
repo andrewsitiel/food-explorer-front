@@ -7,19 +7,18 @@ export const Container = styled.div`
   gap: 1.6rem;
 
   > div {
-
-    img {
-      max-width: 5.3rem;
-    }
-  
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
   
+    background-color: ${({ theme }) => theme.COLORS.TEXT_TRANSPARENT};
+    border-radius: 3px;
+    padding: 5px;
     > h4 {
-      font-family: ${({theme}) => theme.FONTS.TITLE};
+      font-family: ${({ theme }) => theme.FONTS.TITLE};
       font-size: clamp(1.2rem, 0.6rem + 2vw, 1.8rem);
       font-weight: 400;
+
     }
   }
 `;
