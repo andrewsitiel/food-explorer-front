@@ -1,6 +1,6 @@
 import { Container, Header, Main, Anchor } from "./styles";
 import FoodExplorerIcon from "../../assets/Polygon.svg";
-import { useAuth } from "../../hooks/authHookProvider";
+import { useAuth } from "../../hooks/authHook";
 import { Button } from "../../components/Button";
 import { useNavigate } from "react-router-dom";
 import { Input } from "../../components/Input";

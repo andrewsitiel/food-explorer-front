@@ -6,8 +6,8 @@ import THEME from "./styles/theme";
 import { GlobalStyles } from "./styles/global";
 
 import { Router } from './routes/index';
-import { AuthProvider } from "./hooks/authHookProvider";
-import { OrderProvider } from "./hooks/orderHookProvider";
+import { AuthProvider } from "./hooks/authHook";
+import { OrderProvider } from "./hooks/orderHook";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

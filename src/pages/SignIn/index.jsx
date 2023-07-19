@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import FoodExplorerIcon from "../../assets/Polygon.svg";
-import { useAuth } from "../../hooks/authHookProvider";
+import { useAuth } from "../../hooks/authHook";
 import { Container, Header, Main, Anchor } from "./styles";
 
 export function SignIn() {
