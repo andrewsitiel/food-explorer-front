@@ -67,10 +67,10 @@ export const Main = styled.main`
     justify-self: start;
     margin-left: 1.5rem;
 
-    font-family: ${({theme}) => theme.FONTS.TITLE};
+    font-family: ${({ theme }) => theme.FONTS.TITLE};
     font-size: clamp(2rem, 0.5rem + 2vw, 2.4rem);
     font-weight: 500;
-    color: ${ ({theme}) => theme.COLORS.TEXT };
+    color: ${({ theme }) => theme.COLORS.TEXT};
 
     position: relative;
     cursor: pointer;
@@ -84,34 +84,34 @@ export const Main = styled.main`
 
       width: 1.5rem;
       height: 1.5rem;
-      border-top: 1px solid ${ ({theme}) => theme.COLORS.TEXT };
-      border-left: 1px solid ${ ({theme}) => theme.COLORS.TEXT };
+      border-top: 1px solid ${({ theme }) => theme.COLORS.TEXT};
+      border-left: 1px solid ${({ theme }) => theme.COLORS.TEXT};
       
       transform: rotate(-45deg);
     }
   }
 
   > h3 {
-    font-family: ${({theme}) => theme.FONTS.TITLE};
+    font-family: ${({ theme }) => theme.FONTS.TITLE};
     font-size: clamp(1.9rem, 0.3rem + 5vw, 3.2rem);
     font-weight: 500;
-    color: ${ ({theme}) => theme.COLORS.TEXT };
+    color: ${({ theme }) => theme.COLORS.TEXT};
   }
 
   > div > label {
-      font-family: ${({theme}) => theme.FONTS.TITLE};
+      font-family: ${({ theme }) => theme.FONTS.TITLE};
       font-size: clamp(1rem, 0.5rem + 2vw, 1.4rem);
       font-weight: 500;
-      color: ${ ({theme}) => theme.COLORS.LABEL };
+      color: ${({ theme }) => theme.COLORS.LABEL};
 
       margin-bottom: 1rem;
   }
 
   > div h4 {
-      font-family: ${({theme}) => theme.FONTS.TITLE};
+      font-family: ${({ theme }) => theme.FONTS.TITLE};
       font-size: clamp(1rem, 0.5rem + 2vw, 1.4rem);
       font-weight: 500;
-      color: ${ ({theme}) => theme.COLORS.LABEL };
+      color: ${({ theme }) => theme.COLORS.LABEL};
       
       margin-bottom: 0.8rem;
   }
@@ -121,10 +121,10 @@ export const Main = styled.main`
     cursor: pointer;
 
     label {
-      font-family: ${({theme}) => theme.FONTS.TEXT};
+      font-family: ${({ theme }) => theme.FONTS.TEXT};
       font-size: clamp(1rem, 0.1rem + 3vw, 1.4rem);
       font-weight: 400;
-      color: ${ ({theme}) => theme.COLORS.LABEL };
+      color: ${({ theme }) => theme.COLORS.LABEL};
 
       white-space: nowrap;
 
@@ -133,7 +133,7 @@ export const Main = styled.main`
 
     svg {
       font-size: 2.4rem;
-      color: ${ ({theme}) => theme.COLORS.TEXT };
+      color: ${({ theme }) => theme.COLORS.TEXT};
     }
 
     input {
@@ -152,7 +152,7 @@ export const Main = styled.main`
     padding: 1.2rem 3.2rem;
 
     &:hover {
-      border-color: ${ ({theme}) => theme.COLORS.BUTTON }
+      border-color: ${({ theme }) => theme.COLORS.BUTTON}
     }
   }
 
@@ -172,7 +172,7 @@ export const Main = styled.main`
     }
 
     &::-webkit-scrollbar-thumb {
-      background: ${ ({theme}) => theme.COLORS.TEXT_TRANSPARENT };
+      background: ${({ theme }) => theme.COLORS.TEXT_TRANSPARENT};
       border-radius: 10px;
     }
   }
@@ -181,7 +181,7 @@ export const Main = styled.main`
   > div:nth-child(5) > div {
       height: 4.8rem;
 
-      border: 1px solid ${ ({theme}) => theme.COLORS.TEXT };
+      border: 1px solid ${({ theme }) => theme.COLORS.TEXT};
       border-radius: 5px;
 
       display: flex;
@@ -189,7 +189,7 @@ export const Main = styled.main`
       gap: 1.4rem;
 
       &:focus-within {
-        border-color:  ${ ({theme}) => theme.COLORS.BUTTON };
+        border-color:  ${({ theme }) => theme.COLORS.BUTTON};
       }
   }
 
@@ -200,25 +200,25 @@ export const Main = styled.main`
       
       margin-top: 0.8rem;
 
-      border: 1px solid ${ ({theme}) => theme.COLORS.TEXT };
+      border: 1px solid ${({ theme }) => theme.COLORS.TEXT};
       border-radius: 5px;
 
-      font-family: ${({theme}) => theme.FONTS.TEXT};
+      font-family: ${({ theme }) => theme.FONTS.TEXT};
       font-size: clamp(1rem, 0.1rem + 3vw, 1.4rem);
       font-weight: 400;
-      color: ${ ({theme}) => theme.COLORS.TEXT };
+      color: ${({ theme }) => theme.COLORS.TEXT};
 
       resize: none;
 
       &:-webkit-autofill {
         border: none;
-        -webkit-text-fill-color: ${ ({theme}) => theme.COLORS.TEXT };
-        -webkit-box-shadow: 0 0 0px 1000px ${ ({ theme }) => theme.COLORS.BACKGROUND } inset;
+        -webkit-text-fill-color: ${({ theme }) => theme.COLORS.TEXT};
+        -webkit-box-shadow: 0 0 0px 1000px ${({ theme }) => theme.COLORS.BACKGROUND} inset;
       }
 
       &:focus {
         outline: none;
-        border-color: ${ ({theme}) => theme.COLORS.BUTTON };
+        border-color: ${({ theme }) => theme.COLORS.BUTTON};
       }
     }
 
@@ -228,15 +228,15 @@ export const Main = styled.main`
       width: 100%;
       max-width: 35.7rem;
       padding-block: 1.2rem;
-      background: ${ ({theme}) => theme.COLORS.WHITE_TRANSPARENT};
+      background: ${({ theme }) => theme.COLORS.WHITE_TRANSPARENT};
 
-      border: solid 1px ${ ({theme}) => theme.COLORS.TEXT };
+      border: solid 1px ${({ theme }) => theme.COLORS.TEXT};
       border-radius: 5px;
 
-      font-family: ${({theme}) => theme.FONTS.TITLE};
+      font-family: ${({ theme }) => theme.FONTS.TITLE};
       font-size: clamp(1rem, 0.5rem + 2vw, 1.4rem);
       font-weight: 500;
-      color: ${ ({theme}) => theme.COLORS.TEXT };
+      color: ${({ theme }) => theme.COLORS.TEXT};
 
       cursor: pointer;
 
