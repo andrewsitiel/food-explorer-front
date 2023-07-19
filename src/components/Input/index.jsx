@@ -7,7 +7,12 @@ export function Input({ Title, Placeholder, Type, Icon, ...rest }) {
 
       <div>
         {Icon && Icon}
-        <input id={Title} placeholder={Placeholder} type={Type} {...rest} />
+        <input
+          id={Title}
+          placeholder={Placeholder}
+          type={Type}
+          {...rest}
+        />
       </div>
 
     </Container>
