@@ -1,4 +1,12 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const appear = keyframes`
+  0%{transform: translateX(-100vw); opacity: 0;}
+
+  50%{opacity: 0.5;}
+
+  100%{transform: translateX(0vw); opacity: 1;}
+`;
 
 export const Container = styled.div`
   width: 100%;
@@ -16,30 +24,29 @@ export const Container = styled.div`
     align-items: center;
 
     position: relative;
+    animation: ${appear} 1s ease-out;
         
     > img {
       width: clamp(10rem, 1rem + 46vw, 63.2rem);
-
       transform: translateX(0);
-
     }
 
     > div {
 
       > h3 {  
-        font-family: ${({theme}) => theme.FONTS.TITLE};
+        font-family: ${({ theme }) => theme.FONTS.TITLE};
         font-size: clamp(1.5rem, 0.5rem + 3vw, 4rem);
         font-weight: 500;
-        color: ${ ({theme}) => theme.COLORS.TEXT };
+        color: ${({ theme }) => theme.COLORS.TEXT};
         
         margin-bottom: 8px;
       }
       
       > p {
-        font-family: ${({theme}) => theme.FONTS.TITLE};
+        font-family: ${({ theme }) => theme.FONTS.TITLE};
         font-size: clamp(0.9rem, 0.1rem + 2vw, 1.6rem);
         font-weight: 400;
-        color: ${ ({theme}) => theme.COLORS.TEXT };
+        color: ${({ theme }) => theme.COLORS.TEXT};
       }
     }
 
@@ -62,10 +69,10 @@ export const Container = styled.div`
     margin-top: 6rem;
 
     > h4 {
-      font-family: ${({theme}) => theme.FONTS.TITLE};
+      font-family: ${({ theme }) => theme.FONTS.TITLE};
       font-size: clamp(1.9rem, 0.3rem + 5vw, 3.2rem);
       font-weight: 500;
-      color: ${({theme}) => theme.COLORS.TEXT};
+      color: ${({ theme }) => theme.COLORS.TEXT};
       
       margin-bottom: 3.9rem;
     }
