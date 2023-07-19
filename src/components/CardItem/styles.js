@@ -1,5 +1,15 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
+
+const appear = keyframes`
+  0% {
+    transform: translateX(100vw);
+  }
+
+  100% {
+    transform: translateX(0vw);
+  }
+`;
 
 export const Container = styled.div`
   width: clamp(25rem, 9rem + 21vw, 30rem);
@@ -7,7 +17,7 @@ export const Container = styled.div`
   padding: 5.6rem 4rem 4rem 4rem;
   border-radius: 8px;
 
-  background-color: ${ ({theme}) => theme.COLORS.TRANSPARENT };
+  background-color: ${({ theme }) => theme.COLORS.TRANSPARENT};
 
   display: flex;
   flex-direction: column;
@@ -16,6 +26,14 @@ export const Container = styled.div`
   gap: 1.6rem;
 
   position: relative;
+
+  transform: translateX(100vw);
+
+  animation-name: ${appear};
+  animation-duration: 700ms;
+  animation-delay: ${({ delay }) => `${delay}00ms`};
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
   
   > img {
     width: clamp(15rem, 1rem + 13vw, 17.6rem);
@@ -23,19 +41,19 @@ export const Container = styled.div`
   }
 
   > p {
-      font-family: ${({theme}) => theme.FONTS.TEXT};
+      font-family: ${({ theme }) => theme.FONTS.TEXT};
       font-size: clamp(1rem, 0.1rem + 3vw, 1.4rem);
       font-weight: 400;
-      color: ${({theme}) => theme.COLORS.LABEL};
+      color: ${({ theme }) => theme.COLORS.LABEL};
       
       text-align: center;
   }
 
   > span {
-      font-family: ${({theme}) => theme.FONTS.TEXT};
+      font-family: ${({ theme }) => theme.FONTS.TEXT};
       font-size: clamp(1.9rem, 0.3rem + 5vw, 3.2rem);
       font-weight: 400;
-      color: ${ ({theme}) => theme.COLORS.PRICE };
+      color: ${({ theme }) => theme.COLORS.PRICE};
   }
 
   > span + div {
@@ -59,31 +77,11 @@ export const Container = styled.div`
   }
 `;
 
-export const Heart = styled.button`
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  z-index: 5;
-  
-  margin: 0;
-  
-  background: none;
-  border: none;
-  
-  cursor: pointer;
-  
-  > svg {
-    font-size: clamp(2.6rem, 1rem + 5vw, 3.2rem);
-    color: ${({theme}) => theme.COLORS.TEXT};
-    fill: ${ ({IsFilled, theme}) => IsFilled ? theme.COLORS.TEXT : "none"};
-  }
-`;
-
 export const Anchor = styled(Link)`
-  font-family: ${({theme}) => theme.FONTS.TITLE};
+  font-family: ${({ theme }) => theme.FONTS.TITLE};
   font-size: clamp(2rem, 0.5rem + 2vw, 2.4rem);
   font-weight: 700;
-  color: ${ ({theme}) => theme.COLORS.TEXT };
+  color: ${({ theme }) => theme.COLORS.TEXT};
 
   text-align: center;
   text-decoration: none;

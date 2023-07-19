@@ -1,27 +1,36 @@
-import { useState } from "react";
-import { Button } from "../Button";
-import { ItemsAmount } from "../ItemsAmount";
-import { HiOutlineHeart } from "react-icons/hi";
-import { Container, Heart, Anchor } from "./styles";
 import { formatPrice } from "../../utils/formatPrice";
-
+import { useOrder } from "../../hooks/orderHook";
+import { Heart } from "../../components/Heart";
+import { Container, Anchor } from "./styles";
+import { ItemsAmount } from "../ItemsAmount";
 import { api } from "../../services/api";
+import { Button } from "../Button";
+import { useState } from "react";
 
-export function CardItem({ item }) {
-  const [HeartIsFilled, setHeartIsFilled] = useState(false);
+export function CardItem({ item, delay }) {
 
-  function handleClickOnHeart() {
-    HeartIsFilled ? setHeartIsFilled(false) : setHeartIsFilled(true);
+  const [dishAmount, setDishAmount] = useState(1);
+  const { order, addItemToOrder, updatedAmount } = useOrder();
+
+  function handleAddItem() {
+    const itemAdded = order.find(newItem => newItem.id === item.id);
+
+    if (itemAdded) {
+      if (itemAdded.amount === dishAmount) {
+        alert("Você já adicionou este item")
+        return
+      } else {
+        updatedAmount(itemAdded.id, dishAmount)
+        return
+      }
+    }
+
+    addItemToOrder(item, dishAmount)
   }
 
   return (
-    <Container>
-      <Heart
-        onClick={() => handleClickOnHeart()}
-        IsFilled={HeartIsFilled}
-      >
-        {<HiOutlineHeart />}
-      </Heart>
+    <Container delay={delay}>
+      <Heart DishID={item.id} />
 
       <img src={`${api.defaults.baseURL}/files/${item.image}`} alt={`Foto de um(a) ${item.name}`} />
 
@@ -34,7 +43,8 @@ export function CardItem({ item }) {
       </span>
 
       <div>
-        <ItemsAmount /><Button title="Incluir" />
+        <ItemsAmount HandleDishAmount={{ dishAmount, setDishAmount }} />
+        <Button title="Incluir" onClick={() => { handleAddItem() }} />
       </div>
     </Container>
   )
