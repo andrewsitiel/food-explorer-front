@@ -49,6 +49,7 @@ export function Slider({ Items }) {
         autoplay
         slidesPerView="auto"
         spaceBetween={27}
+        slidesOffsetAfter={100}
       >
         <SwiperButtonBackward>
           <IoIosArrowBack />
@@ -61,7 +62,7 @@ export function Slider({ Items }) {
             return (
               <SwiperSlide key={index}>
 
-                <CardItem item={item} />
+                <CardItem item={item} delay={index} />
 
               </SwiperSlide>
             )
