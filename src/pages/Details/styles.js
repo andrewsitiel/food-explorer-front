@@ -17,8 +17,7 @@ export const Main = styled.main`
 
   img {
     width: clamp(27rem, 20rem + 19vw, 38.9rem);
-    max-width: 38.9rem;
-    max-height: 38.9rem;
+    height: clamp(27rem, 20rem + 19vw, 38.9rem);
     border-radius: 50%;
 
     margin: auto;
