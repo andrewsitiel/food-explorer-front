@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.ul`
-  max-height: 424px;
+  height: 424px;
   overflow-y: auto;
 
 > li {
@@ -30,6 +30,11 @@ export const Container = styled.ul`
       color: ${({ theme }) => theme.COLORS.BUTTON_LIGHT};
       
       cursor: pointer;
+      transition: filter 200ms;
+      &:hover {
+      filter: brightness(1.3);
+
+      }
       }
 
     > div {
