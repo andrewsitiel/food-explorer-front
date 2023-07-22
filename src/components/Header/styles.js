@@ -2,10 +2,13 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Container = styled.header`  
-  width: 100vw;
-  align-self: start;
+  width: 100%;
+  height: 9rem;
 
-  margin-bottom: 3.4rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
 
   display: flex;
   align-items: center;
@@ -13,7 +16,7 @@ export const Container = styled.header`
   gap: 3.2rem;
   padding: 2.4rem 1.9rem;
   
-  background-color: ${ ({theme}) => theme.COLORS.BACKGROUND };
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND};
 
   > div {
     display: flex;
@@ -34,7 +37,7 @@ export const Container = styled.header`
 export const Menu = styled.menu`
   padding: 2rem;
   border-radius: 5px 0px 5px 5px;
-  background-color: ${ ({ theme }) => theme.COLORS.BACKGROUND };
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND};
   
   position: absolute;
   top: 103px;
@@ -49,7 +52,7 @@ export const Menu = styled.menu`
   "orders orders exit";
   gap: 3rem;
 
-  visibility: ${ ({ isMenuOpen }) => isMenuOpen ? "visible" : "hidden" };
+  visibility: ${({ isMenuOpen }) => isMenuOpen ? "visible" : "hidden"};
 
   div {
     grid-area: input;
@@ -60,7 +63,7 @@ export const Menu = styled.menu`
 
     div {
       border: none;
-      background: ${ ({theme}) => theme.COLORS.BACKGROUND_LIGHT };
+      background: ${({ theme }) => theme.COLORS.BACKGROUND_LIGHT};
     }
   }
 
@@ -78,7 +81,7 @@ export const Menu = styled.menu`
     
     svg {
       font-size: 2.3rem;
-      color: ${ ({theme}) => theme.COLORS.TEXT };
+      color: ${({ theme }) => theme.COLORS.TEXT};
     }
   }
 
@@ -106,7 +109,7 @@ export const MenuButton = styled.button`
   background: none;
   
   transform-style: preserve-3d;
-  transform:  ${ ({ isMenuOpen }) => isMenuOpen ? "rotateY(0deg)" : "rotateY(180deg)" };
+  transform:  ${({ isMenuOpen }) => isMenuOpen ? "rotateY(0deg)" : "rotateY(180deg)"};
 
   transition: transform 500ms;
 
@@ -120,7 +123,7 @@ export const MenuButton = styled.button`
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: ${ ({ theme }) => theme.COLORS.BACKGROUND_DARK };
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_DARK};
     transform: rotateY(0.5turn);
     
     position: absolute;
@@ -131,7 +134,7 @@ export const MenuButton = styled.button`
       content: "";
       width: 50%;
       height: 3px;
-      background-color: ${ ({ theme }) => theme.COLORS.TEXT };
+      background-color: ${({ theme }) => theme.COLORS.TEXT};
       border-radius: 5px;
 
       position: absolute;
@@ -143,7 +146,7 @@ export const MenuButton = styled.button`
       content: "";
       width: 50%;
       height: 3px;  
-      background-color: ${ ({ theme }) => theme.COLORS.TEXT };
+      background-color: ${({ theme }) => theme.COLORS.TEXT};
       border-radius: 5px;
 
       position: absolute;
@@ -156,7 +159,7 @@ export const MenuButton = styled.button`
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: ${ ({ theme }) => theme.COLORS.BUTTON };
+    background-color: ${({ theme }) => theme.COLORS.BUTTON};
 
     position: absolute;
     top: 0;
@@ -166,7 +169,7 @@ export const MenuButton = styled.button`
       content: "";
       width: 50%;
       height: 3px;
-      background-color: ${ ({ theme }) => theme.COLORS.TEXT };
+      background-color: ${({ theme }) => theme.COLORS.TEXT};
       border-radius: 5px;
 
       position: absolute;
@@ -180,7 +183,7 @@ export const MenuButton = styled.button`
       content: "";
       width: 50%;
       height: 3px;
-      background-color:  ${ ({ theme }) => theme.COLORS.TEXT };
+      background-color:  ${({ theme }) => theme.COLORS.TEXT};
       border-radius: 5px;
       
       position: absolute;
@@ -210,20 +213,40 @@ export const FavoritesButton = styled.button`
     grid-area: favorites;
     justify-self: center;
 
-    font-family: ${({theme}) => theme.FONTS.TEXT};
+    font-family: ${({ theme }) => theme.FONTS.TEXT};
     font-size: clamp(1.2rem, 0.1rem + 2vw, 1.6rem);
     font-weight: 400;
-    color: ${ ({theme}) => theme.COLORS.TEXT_SECONDARY };
+    color: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
     
+    position: relative;
+
     white-space: nowrap;
     cursor: pointer;
+
+    &:after {
+      content: "";
+      width: ${({ IsFavoritesFilterActive }) => IsFavoritesFilterActive ? "0%" : "100%"};
+      height: 1px;
+      background-color: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+
+      transition: width 300ms;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
 `;
 
 export const Anchor = styled(Link)`
-  font-family: ${({theme}) => theme.FONTS.TEXT};
+  font-family: ${({ theme }) => theme.FONTS.TEXT};
   font-size: clamp(1.9rem, 0.7rem + 3vw, 2.5rem);
   font-weight: 700;
-  color: ${ ({theme}) => theme.COLORS.TEXT };
+  color: ${({ theme }) => theme.COLORS.TEXT};
       
   white-space: nowrap;
   text-decoration: none;

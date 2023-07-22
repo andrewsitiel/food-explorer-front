@@ -12,8 +12,11 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background-color: ${ ({theme}) => theme.COLORS.BACKGROUND_DARK };
-    width: 100vw;
-    height: 100vh;
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_DARK};
+    min-width: 100vw;
+    min-height: 100vh;
+
+    position: relative;
+    padding: 12rem 0 14rem;
   }
 `;

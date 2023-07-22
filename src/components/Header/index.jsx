@@ -1,18 +1,22 @@
 import { Container, Menu, MenuButton, Anchor, FavoritesButton } from "./styles";
+import { useAuth } from "../../hooks/authHook";
+import { useOrder } from "../../hooks/orderHook";
 import FoodExplorerIcon from "../../assets/Polygon.svg";
-import { useAuth } from "../../hooks/authHookProvider";
 import { IoReceiptOutline } from "react-icons/io5"
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { CiSearch } from "react-icons/ci";
 import { RxExit } from "react-icons/rx";
 import { Button } from "../Button";
 import { Input } from "../Input";
-import { useState } from "react";
 
-export function Header() {
+export function Header({ FilterFavorites, IsFavoritesFilterActive, filterDishes }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isHome, setIsHome] = useState();
+  const { removeAccess } = useAuth();
+  const { order } = useOrder();
+
   const navigate = useNavigate();
-  const { removeAccess } = useAuth()
 
   function openAndCloseMenu() {
     isMenuOpen == false ? setIsMenuOpen(true) : setIsMenuOpen(false);
@@ -22,6 +26,13 @@ export function Header() {
     navigate("/")
     removeAccess();
   }
+
+  useEffect(() => {
+
+    const { pathname } = window.location;
+
+    pathname === "/" ? setIsHome(true) : setIsHome(false);
+  }, [])
 
   return (
     <Container>
@@ -33,11 +44,26 @@ export function Header() {
       </div>
 
       <Menu isMenuOpen={isMenuOpen}>
-        <FavoritesButton>Meus Favoritos</FavoritesButton>
+        <FavoritesButton
+          onClick={isHome ? FilterFavorites : undefined}
+          IsFavoritesFilterActive={isHome ? IsFavoritesFilterActive : true}
+        >
+          Meus Favoritos
+        </FavoritesButton>
 
-        <Input Placeholder="Busque pelas opções de pratos" Type="text" Icon={<CiSearch />} />
+        <Input
+          Placeholder="Busque pelas opções de pratos (Nome ou ingrediente)"
+          Type="text"
+          Icon={<CiSearch />}
+          onChange={(e) => { filterDishes(e) }}
+        />
 
-        <Button title="Meus pedidos" orders="0" Icon={IoReceiptOutline} onClick={() => { navigate("/my-order") }} />
+        <Button
+          title={"Meu pedido"}
+          onClick={() => { navigate("/my-order") }}
+          orders={order.length > 0 ? order.length : "0"}
+          Icon={IoReceiptOutline}
+        />
 
         <button onClick={handleLogOut}> <RxExit /> </button>
       </Menu>

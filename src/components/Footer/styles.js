@@ -2,24 +2,27 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Container = styled.footer`  
-  width: 100vw;
+  width: 100%;
+  height: 8rem;
   padding: 2.3rem 1.9rem;
-  align-self: end;
+  
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
   
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
 
-  margin-top: 6rem;
-
-  background-color: ${ ({theme}) => theme.COLORS.BACKGROUND };
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND};
 
   p {
-    font-family: ${({theme}) => theme.FONTS.FOOTER};
+    font-family: ${({ theme }) => theme.FONTS.FOOTER};
     font-size: clamp(1.2rem, 0.1rem + 2vw, 1.6rem);
     font-weight: 400;
-    color: ${ ({theme}) => theme.COLORS.TEXT };
+    color: ${({ theme }) => theme.COLORS.TEXT};
 
     white-space: wrap;
   };
@@ -37,10 +40,10 @@ export const Anchor = styled(Link)`
 
   text-decoration: none;
   > h1 {
-    font-family: ${({theme}) => theme.FONTS.TEXT};
+    font-family: ${({ theme }) => theme.FONTS.TEXT};
     font-size: clamp(1.9rem, 0.7rem + 3vw, 2.5rem);
     font-weight: 700;
-    color: ${ ({theme}) => theme.COLORS.TEXT_TRANSPARENT };
+    color: ${({ theme }) => theme.COLORS.TEXT_TRANSPARENT};
     white-space: nowrap;
   }
 
@@ -48,7 +51,7 @@ export const Anchor = styled(Link)`
     width: clamp(19px, 1px + 7vw, 30px);
     
     path {
-      fill: ${ ({theme}) => theme.COLORS.TEXT_TRANSPARENT };
+      fill: ${({ theme }) => theme.COLORS.TEXT_TRANSPARENT};
     }
   }
 `;
