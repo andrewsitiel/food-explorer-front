@@ -30,7 +30,7 @@ export function CardItem({ item, delay }) {
 
   return (
     <Container delay={delay}>
-      <Heart DishID={item.id} />
+      <Heart />
 
       <img src={`${api.defaults.baseURL}/files/${item.image}`} alt={`Foto de um(a) ${item.name}`} />
 

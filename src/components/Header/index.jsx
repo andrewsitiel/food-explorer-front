@@ -1,20 +1,22 @@
 import { Container, Menu, MenuButton, Anchor, FavoritesButton } from "./styles";
-import { useAuth } from "../../hooks/authHook";
-import { useOrder } from "../../hooks/orderHook";
 import FoodExplorerIcon from "../../assets/Polygon.svg";
 import { IoReceiptOutline } from "react-icons/io5"
+import { useOrder } from "../../hooks/orderHook";
+import { useAuth } from "../../hooks/authHook";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { CiSearch } from "react-icons/ci";
 import { RxExit } from "react-icons/rx";
+import { BiDish } from "react-icons/bi";
 import { Button } from "../Button";
 import { Input } from "../Input";
 
-export function Header({ FilterFavorites, IsFavoritesFilterActive, filterDishes }) {
+export function Header({ filterDishes }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHome, setIsHome] = useState();
   const { removeAccess } = useAuth();
   const { order } = useOrder();
+  const { user } = useAuth();
 
   const navigate = useNavigate();
 
@@ -44,10 +46,7 @@ export function Header({ FilterFavorites, IsFavoritesFilterActive, filterDishes 
       </div>
 
       <Menu isMenuOpen={isMenuOpen}>
-        <FavoritesButton
-          onClick={isHome ? FilterFavorites : undefined}
-          IsFavoritesFilterActive={isHome ? IsFavoritesFilterActive : true}
-        >
+        <FavoritesButton>
           Meus Favoritos
         </FavoritesButton>
 
@@ -55,15 +54,25 @@ export function Header({ FilterFavorites, IsFavoritesFilterActive, filterDishes 
           Placeholder="Busque pelas opções de pratos (Nome ou ingrediente)"
           Type="text"
           Icon={<CiSearch />}
-          onChange={(e) => { filterDishes(e) }}
+          onChange={(e) => { isHome ? filterDishes(e) : undefined }}
         />
 
-        <Button
-          title={"Meu pedido"}
-          onClick={() => { navigate("/my-order") }}
-          orders={order.length > 0 ? order.length : "0"}
-          Icon={IoReceiptOutline}
-        />
+        {!user.admin &&
+          <Button
+            title={"Meu pedido"}
+            onClick={() => { navigate("/my-order") }}
+            orders={order.length > 0 ? order.length : "0"}
+            Icon={IoReceiptOutline}
+          />
+        }
+
+        {user.admin &&
+          <Button
+            title={"Criar novo prato"}
+            onClick={() => { navigate("/create-dish") }}
+            Icon={BiDish}
+          />
+        }
 
         <button onClick={handleLogOut}> <RxExit /> </button>
       </Menu>

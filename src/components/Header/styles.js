@@ -222,24 +222,6 @@ export const FavoritesButton = styled.button`
 
     white-space: nowrap;
     cursor: pointer;
-
-    &:after {
-      content: "";
-      width: ${({ IsFavoritesFilterActive }) => IsFavoritesFilterActive ? "0%" : "100%"};
-      height: 1px;
-      background-color: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
-
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      z-index: 10;
-
-      transition: width 300ms;
-    }
-
-    &:hover::after {
-      width: 100%;
-    }
 `;
 
 export const Anchor = styled(Link)`
