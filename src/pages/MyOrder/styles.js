@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  main {
+  > main {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -13,21 +13,23 @@ export const Container = styled.div`
 
     > section {
       > h3 {
-        font-family: ${({theme}) => theme.FONTS.TITLE};
+        font-family: ${({ theme }) => theme.FONTS.TITLE};
         font-size: clamp(1.9rem, 0.3rem + 5vw, 3.2rem);
         font-weight: 500;
-        color: ${({theme}) => theme.COLORS.TEXT};
+        color: ${({ theme }) => theme.COLORS.TEXT};
         
         margin-bottom: 3.2rem;
       }
       
       > h4 {
-        font-family: ${({theme}) => theme.FONTS.TITLE};
+        font-family: ${({ theme }) => theme.FONTS.TITLE};
         font-size: clamp(2rem, 0.5rem + 2vw, 2.4rem);
         font-weight: 500;
-        color: ${({theme}) => theme.COLORS.TEXT};
-      }
+        color: ${({ theme }) => theme.COLORS.TEXT};
 
+        margin-top: 3rem;
+
+      }
     }
   }
 
@@ -39,51 +41,19 @@ export const Container = styled.div`
   }
 `;
 
-export const ListItem = styled.li`
-  list-style: outside;
-  
+export const EmptyOrder = styled.div`
+  height: 84vh;
+  font-family: ${({ theme }) => theme.FONTS.TITLE};
+  color: ${({ theme }) => theme.COLORS.TEXT_TRANSPARENT};
+
   display: flex;
+  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 1.3rem;
+  gap: 5rem;
 
-  margin-bottom: 1.6rem;
-
-  > img {
-    width: 7.2rem;
-    height: 7.2rem;
-  }
-
-  > div {
-    > button {
-      background: none;
-      border: none;
-
-      font-family: ${({theme}) => theme.FONTS.TEXT};
-      font-size: clamp(1rem, 0.1rem + 3vw, 1.4rem);
-      font-weight: 400;
-      color: ${({theme}) => theme.COLORS.BUTTON_LIGHT};
-      
-      cursor: pointer;
-    }
-
-    > div {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    
-    > h4 {
-      font-family: ${({theme}) => theme.FONTS.TITLE};
-      font-size: clamp(2rem, 0.5rem + 2vw, 2.4rem);
-      font-weight: 500;
-      color: ${({theme}) => theme.COLORS.TEXT};
-    }
-    
-    > span {
-      font-family: ${({theme}) => theme.FONTS.TEXT};
-      font-size: clamp(1rem, 0.1rem + 3vw, 1.4rem);
-      font-weight: 400;
-      color: ${({theme}) => theme.COLORS.LABEL};
-    }
-  }
+  h4 {
+    font-size: 40px;
+    text-align: center;
   }
 `;

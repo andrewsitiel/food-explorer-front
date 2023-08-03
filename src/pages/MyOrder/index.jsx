@@ -1,101 +1,48 @@
+import { Container, EmptyOrder } from "./styles";
 import { Payment } from "../../components/Payment";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
-import Image from "../../assets/Mask group.png";
-import { Container, ListItem } from "./styles";
+import { useOrder } from "../../hooks/orderHook";
+import { totalAmount } from "../../utils/totalAmount";
+import { OrderList } from "../../components/OrderList";
+import { BsCart3 } from "react-icons/bs";
 
 export function MyOrder() {
-
-
-  const Items = [
-    {
-      amount: 3,
-      name: "Praprioka",
-      price: 3.0
-    },
-    {
-      amount: 3,
-      name: "Praprioka",
-      price: 3.5
-    },
-    {
-      amount: 3,
-      name: "Praprioka",
-      price: 3.0
-    },
-    {
-      amount: 3,
-      name: "Praprioka",
-      price: 3.0
-    },
-    {
-      amount: 3,
-      name: "Praprioka",
-      price: 3.0
-    },
-  ];
-
-  let totalAmount = 0;
-
-  Items.forEach((item) => {
-    totalAmount = totalAmount + item.price;
-  });
-
-  totalAmount = String(totalAmount).split(".")
+  const { order } = useOrder();
 
   return (
-    <Container
+    <Container>
+      <Header />
 
-    >
-      <Header></Header>
-      <main>
-        <section>
-          <h3>Meu Pedido</h3>
-          <ul>
+      {order.length > 0 &&
+        <main>
+          <section>
+            <h3>Meu Pedido</h3>
 
-            {Items.map((item, index) => {
+            <OrderList order={order} />
 
-              item.price = String(item.price).split(".");
+            <h4>
+              {`Total do pedido: ${totalAmount(order)}`}
+            </h4>
 
-              return (
-                <ListItem key={index}>
-                  <img src={Image} alt={`Foto de um ${item.name}`} />
-                  <div>
+          </section>
 
-                    <div>
-                      <h4>{item.amount}{" X  "} {item.name}</h4>
-                      <span>
-                        {"R$ "}
-                        {item.price[0].padStart(2, "0")}
-                        {","}
-                        {item.price[1] && item.price[1].padEnd(2, "0") || "00"}
-                      </span>
-                    </div>
+          <section>
+            <h3>Pagamento</h3>
 
-                    <button>Excluir</button>
-                  </div>
-                </ListItem>
-              )
-            }
-            )}
+            <Payment />
+          </section>
 
-          </ul>
+        </main>
+      }
 
-          <h4>
-            {"Total do pedido: R$ "}
-            {totalAmount[0].padStart(2, "0")}
-            {","}
-            {totalAmount[1] ? totalAmount[1].padEnd(2, "0") : "00"}
-          </h4>
-        </section>
-
-        <section>
-          <h3>Pagamento</h3>
-
-          <Payment />
-        </section>
-      </main>
-      <Footer></Footer>
+      {order.length === 0 &&
+        <EmptyOrder>
+          <BsCart3 size={250} />
+          <h4>Seu pedido ainda está vazio</h4>
+        </EmptyOrder>
+      }
+      < Footer />
     </Container>
   )
 }
