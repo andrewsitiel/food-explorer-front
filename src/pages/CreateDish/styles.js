@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   display: grid;
@@ -26,10 +27,6 @@ export const Main = styled.main`
   "button"
   ;
   gap: 3.2rem;
-  
-  > a:nth-child(1) {
-    grid-area: back;
-  }
 
   > h3:nth-child(2) {
     grid-area: title;
@@ -60,35 +57,6 @@ export const Main = styled.main`
 
   > button:nth-child(9) {
     grid-area: button;
-  }
-
-  a {
-    align-self: center;
-    justify-self: start;
-    margin-left: 1.5rem;
-
-    font-family: ${({ theme }) => theme.FONTS.TITLE};
-    font-size: clamp(2rem, 0.5rem + 2vw, 2.4rem);
-    font-weight: 500;
-    color: ${({ theme }) => theme.COLORS.TEXT};
-
-    position: relative;
-    cursor: pointer;
-
-    &:before {
-      content: "";
-
-      position: absolute;
-      top: 8px;
-      left: -26px;
-
-      width: 1.5rem;
-      height: 1.5rem;
-      border-top: 1px solid ${({ theme }) => theme.COLORS.TEXT};
-      border-left: 1px solid ${({ theme }) => theme.COLORS.TEXT};
-      
-      transform: rotate(-45deg);
-    }
   }
 
   > h3 {
@@ -193,6 +161,28 @@ export const Main = styled.main`
       }
   }
 
+  > div:nth-child(6) > div {
+    position: relative;
+    padding: 1.2rem 1.4rem 1.2rem 3.4rem;
+
+    &::before {
+      content: "R$";
+      width: fit-content;
+      height: fit-content;
+
+      font-family: ${({ theme }) => theme.FONTS.TEXT};
+      font-size: clamp(1rem, 0.1rem + 3vw, 1.4rem);
+      font-weight: 400;
+      color: ${({ theme }) => theme.COLORS.TEXT};
+      
+      
+      position: absolute;
+      top: a;
+      left: 14px;
+      z-index: 10;
+    }
+  }
+
   > div textarea {
       width: 100%;
       padding: 12px 14px;
@@ -227,6 +217,7 @@ export const Main = styled.main`
 
       width: 100%;
       max-width: 35.7rem;
+      max-height: 4.7rem;
       padding-block: 1.2rem;
       background: ${({ theme }) => theme.COLORS.WHITE_TRANSPARENT};
 
@@ -277,4 +268,86 @@ export const Main = styled.main`
       }
   }
 
+`;
+
+export const Anchor = styled(Link)`
+  grid-area: back;
+  align-self: center;
+  justify-self: start;
+  
+  margin-left: 1.5rem;
+  
+  font-family: ${({ theme }) => theme.FONTS.TITLE};
+  font-size: clamp(2rem, 0.5rem + 2vw, 2.4rem);
+  font-weight: 500;
+  color: ${({ theme }) => theme.COLORS.TEXT};
+  text-decoration: none;
+
+  position: relative;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+
+    position: absolute;
+    top: 8px;
+    left: -26px;
+
+    width: 1.5rem;
+    height: 1.5rem;
+    border-top: 1px solid ${({ theme }) => theme.COLORS.TEXT};
+    border-left: 1px solid ${({ theme }) => theme.COLORS.TEXT};
+    
+    transform: rotate(-45deg);
+  }
+`;
+
+export const Select = styled.div`
+  width: 100%;
+
+  
+  > div {
+    padding: 1.2rem 1.4rem;
+    height: 4.8rem;
+    
+    border: 1px solid ${({ theme }) => theme.COLORS.TEXT};
+    border-radius: 5px;
+    
+    margin-top: 0.8rem;
+    
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    
+    &:focus-within {
+      border-color: ${({ theme }) => theme.COLORS.BUTTON};
+    }
+
+  > select {
+    
+      width: 100%;
+      border: none;
+      background: transparent;
+      
+      font-family: ${({ theme }) => theme.FONTS.TEXT};
+      font-size: clamp(1rem, 0.1rem + 3vw, 1.4rem);
+      font-weight: 400;
+      color: ${({ theme }) => theme.COLORS.TEXT};
+
+      &:focus {
+        outline: none;
+      }
+
+      > option {
+        background-color: ${({ theme }) => theme.COLORS.BACKGROUND}
+      }
+    }
+    
+    > label {
+      font-family: ${({ theme }) => theme.FONTS.TEXT};
+      font-size: clamp(1.2rem, 0.1rem + 2vw, 1.6rem);
+      font-weight: 400;
+      color: ${({ theme }) => theme.COLORS.LABEL};
+    }
+  }
 `;
