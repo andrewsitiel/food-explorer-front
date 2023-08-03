@@ -1,8 +1,8 @@
 import { IngredientsInput } from "../../components/IngredientsInput";
+import { Container, Main, Anchor, Select } from "./styles.js";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { Input } from "../../components/Input";
-import { Container, Main } from "./styles.js";
 import { FiUpload } from "react-icons/fi";
 import { api } from "../../services/api";
 import { useState } from "react";
@@ -11,7 +11,7 @@ export function CreateDish() {
   const [ingredients, setIngredients] = useState([]);
   const [name, setName] = useState();
   const [price, setPrice] = useState();
-  const [category, setCategory] = useState();
+  const [category, setCategory] = useState("Dish");
   const [description, setDescription] = useState();
   const [image, setImage] = useState();
   const [inputValue, setInputValue] = useState("");
@@ -32,26 +32,34 @@ export function CreateDish() {
   async function handleNewDish() {
     const dish = new FormData();
 
+    if (typeof parseInt(price) != "number") {
+      alert("Por favor, insira apenas valores válidos.");
+      return
+    }
+
     if (!image || !name || !price || !category || !description || !ingredients) {
       alert("Por favor, preencha todos os campos.")
       return
     }
+    const dishInfos = {
+      name: name,
+      price: price,
+      category: category,
+      description: description,
+      ingredients: ingredients
+    }
 
     dish.append("image", image);
-    dish.append("name", name);
-    dish.append("price", price);
-    dish.append("category", category);
-    dish.append("description", description);
-    dish.append("ingredients", ingredients);
+    dish.append("infos", JSON.stringify(dishInfos));
 
     try {
 
-      await api.post("/dishes", dishImage);
+      await api.post("/dishes", dish);
 
       alert("Prato criado com sucesso.");
     } catch (error) {
       if (error.message) {
-        alert(error.message)
+        alert(error.response.data.message)
       } else {
         alert("Não foi possível criar o prato. Por favor, tente novamente mais tarde.")
       }
@@ -69,7 +77,7 @@ export function CreateDish() {
     <Container>
       <Header />
       <Main >
-        <a>Voltar</a>
+        <Anchor to={"/"}>Voltar</Anchor>
 
         <h3>Adicionar Prato</h3>
 
@@ -88,7 +96,12 @@ export function CreateDish() {
           </div>
         </div>
 
-        <Input Title="Nome" Placeholder="Ex.: Salada Ceasar" onChange={(e) => { setName(e.target.value) }} />
+        <Input
+          Title="Nome"
+          Type="text"
+          Placeholder="Ex.: Salada Ceasar"
+          onChange={(e) => { setName(e.target.value) }}
+        />
 
         <div>
           <h4>Ingredientes</h4>
@@ -116,8 +129,30 @@ export function CreateDish() {
           </div>
         </div>
 
-        <Input Title="Preço" Placeholder="Ex.: R$ 30,00" onChange={(e) => { setPrice(e.target.value) }} />
-        <Input Title="Categoria" Placeholder="A qual categoria pertence o prato" onChange={(e) => { setCategory(e.target.value) }} />
+        <Input
+          Title="Preço"
+          Type="number"
+          Placeholder="Ex.: 30,00"
+          min={0}
+          step={.01}
+          lang="pt-BR"
+          onChange={(e) => { setPrice(e.target.value) }}
+        />
+
+        <Select>
+          <label htmlFor="Categoria">Categoria</label>
+          <div>
+            <select
+              name="Categoria"
+              placeholder="A qual categoria pertence o prato"
+              onChange={(e) => { setCategory(e.target.value) }}
+            >
+              <option value="Dish">Dish</option>
+              <option value="Drink">Drink</option>
+              <option value="Dessert">Dessert</option>
+            </select>
+          </div>
+        </Select>
 
         <div>
           <label htmlFor="description">Descrição</label>
