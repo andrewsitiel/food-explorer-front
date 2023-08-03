@@ -14,7 +14,7 @@ const appear = keyframes`
 export const Container = styled.div`
   width: clamp(25rem, 9rem + 21vw, 30rem);
   height: clamp(45rem, 10rem + 30vw, 51.2rem);
-  padding: 5.6rem 4rem 4rem 4rem;
+  padding: 3.6rem 6.2rem 3.5rem;
   border-radius: 8px;
 
   background-color: ${({ theme }) => theme.COLORS.TRANSPARENT};
@@ -37,7 +37,10 @@ export const Container = styled.div`
   
   > img {
     width: clamp(15rem, 1rem + 13vw, 17.6rem);
-    max-height: 17.6rem;
+    height: clamp(15rem, 1rem + 13vw, 17.6rem);
+    border-radius: 50%;
+
+    /* margin-top: 3rem; */
   }
 
   > p {
@@ -47,6 +50,11 @@ export const Container = styled.div`
       color: ${({ theme }) => theme.COLORS.LABEL};
       
       text-align: center;
+
+      width: 100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
   }
 
   > span {
