@@ -22,6 +22,11 @@ export function SignUp() {
       return
     }
 
+    if (password.length < 6) {
+      alert("A senha deve conter no mínimo 6 dígitos")
+      return
+    }
+
     const { data } = await createUser({ name, email, password })
 
     alert(data.message)
