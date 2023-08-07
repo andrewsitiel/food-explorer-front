@@ -6,15 +6,17 @@ import { Input } from "../../components/Input";
 import { FiUpload } from "react-icons/fi";
 import { api } from "../../services/api";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function CreateDish() {
-  const [ingredients, setIngredients] = useState([]);
   const [name, setName] = useState();
   const [price, setPrice] = useState();
+  const [image, setImage] = useState();
   const [category, setCategory] = useState("Dish");
   const [description, setDescription] = useState();
-  const [image, setImage] = useState();
   const [inputValue, setInputValue] = useState("");
+  const [ingredients, setIngredients] = useState([]);
+  const navigate = useNavigate();
 
   function handleAddIngredient() {
     if (inputValue.length > 0) {
@@ -29,18 +31,20 @@ export function CreateDish() {
     setIngredients(filteredIngredients)
   }
 
+  function handleDishImage(event) {
+    const file = event.target.files[0];
+
+    setImage(file)
+  }
+
   async function handleNewDish() {
     const dish = new FormData();
-
-    if (typeof parseInt(price) != "number") {
-      alert("Por favor, insira apenas valores válidos.");
-      return
-    }
 
     if (!image || !name || !price || !category || !description || !ingredients) {
       alert("Por favor, preencha todos os campos.")
       return
     }
+
     const dishInfos = {
       name: name,
       price: price,
@@ -57,6 +61,7 @@ export function CreateDish() {
       await api.post("/dishes", dish);
 
       alert("Prato criado com sucesso.");
+      navigate("/")
     } catch (error) {
       if (error.message) {
         alert(error.response.data.message)
@@ -65,12 +70,6 @@ export function CreateDish() {
       }
     }
 
-  }
-
-  function handleDishImage(event) {
-    const file = event.target.files[0];
-
-    setImage(file)
   }
 
   return (
