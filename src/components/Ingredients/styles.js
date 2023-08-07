@@ -16,7 +16,7 @@ export const Container = styled.div`
     padding: 5px;
     > h4 {
       font-family: ${({ theme }) => theme.FONTS.TITLE};
-      font-size: clamp(1.2rem, 0.6rem + 2vw, 1.8rem);
+      font-size: clamp(1.2rem, 0.6rem + 2vw, 1.5rem);
       font-weight: 400;
 
     }
