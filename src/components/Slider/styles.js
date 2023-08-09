@@ -8,7 +8,7 @@ export const Container = styled.div`
     top: 0;
     z-index: 10;
 
-    width: clamp(3rem, 1rem + 7vw ,11.6rem);
+    width: clamp(3rem, 1rem +  13vw, 6.6rem);
     height: 100%;
     border: none;
 
