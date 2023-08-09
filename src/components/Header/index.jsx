@@ -14,9 +14,8 @@ import { Input } from "../Input";
 export function Header({ filterDishes }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHome, setIsHome] = useState();
-  const { removeAccess } = useAuth();
+  const { user, removeAccess } = useAuth();
   const { order } = useOrder();
-  const { user } = useAuth();
 
   const navigate = useNavigate();
 
