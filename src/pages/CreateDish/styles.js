@@ -86,17 +86,14 @@ export const Main = styled.main`
 
   > div:nth-child(3) {
     position: relative;
-    cursor: pointer;
 
-    label {
+    p {
       font-family: ${({ theme }) => theme.FONTS.TEXT};
       font-size: clamp(1rem, 0.1rem + 3vw, 1.4rem);
       font-weight: 400;
       color: ${({ theme }) => theme.COLORS.LABEL};
 
       white-space: nowrap;
-
-      cursor: pointer;
     }
 
     svg {
@@ -105,53 +102,67 @@ export const Main = styled.main`
     }
 
     input {
-        width: 100%;
-        height: 48px;
-        opacity: 0;
-              
         position: absolute;
-        top: 0;
-        left: 0;
         z-index: -10;
+        opacity: 0;
+    }
+
+    &:focus-within {
+      border-color: ${({ theme }) => theme.COLORS.BUTTON}
     }
   }
 
   > div:nth-child(3) > div {
     padding: 1.2rem 3.2rem;
+    position: relative;
 
-    &:hover {
-      border-color: ${({ theme }) => theme.COLORS.BUTTON}
-    }
-  }
-
-  > div:nth-child(5) > div {
-    padding: 1.2rem 0.8rem;
-
-    overflow-x: overlay;
-    overflow-y: hidden;
-
-    &::-webkit-scrollbar {
+    label {
       position: absolute;
-      height: 5px;
-    }
-    
-    &::-webkit-scrollbar-track {
-      background: none;
-    }
+      top: 0;
+      left: 0;
+      z-index: 10;
 
-    &::-webkit-scrollbar-thumb {
-      background: ${({ theme }) => theme.COLORS.TEXT_TRANSPARENT};
-      border-radius: 10px;
+      width: 100%;
+      height: 100%;
+
+      cursor: pointer;
     }
   }
-  
-  > div:nth-child(3) > div,
-  > div:nth-child(5) > div {
-      height: 4.8rem;
 
+  > div:nth-child(5) {
+    width: 100%;
+    max-width: calc(94vw - 1.9rem);
+    justify-self: center;
+
+    > div {
+      padding: 1.2rem 0.8rem;
+      
+      overflow-x: overlay;
+      overflow-y: hidden;
+      
+      &::-webkit-scrollbar {
+        position: absolute;
+        height: 5px;
+      }
+      
+      &::-webkit-scrollbar-track {
+        background: none;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background: ${({ theme }) => theme.COLORS.TEXT_TRANSPARENT};
+        border-radius: 10px;
+      }
+    }
+  }
+    
+    > div:nth-child(3) > div,
+    > div:nth-child(5) > div {
+      height: 4.8rem;
+      
       border: 1px solid ${({ theme }) => theme.COLORS.TEXT};
       border-radius: 5px;
-
+      
       display: flex;
       align-items: center;
       gap: 1.4rem;

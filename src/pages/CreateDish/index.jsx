@@ -40,8 +40,13 @@ export function CreateDish() {
   async function handleNewDish() {
     const dish = new FormData();
 
-    if (!image || !name || !price || !category || !description || !ingredients) {
+    if (!image || !name || !price || !category || !description) {
       alert("Por favor, preencha todos os campos.")
+      return
+    }
+
+    if (ingredients.length === 0) {
+      alert("Necessário cadastrar ao menos um ingrediente.")
       return
     }
 
@@ -63,7 +68,7 @@ export function CreateDish() {
       alert("Prato criado com sucesso.");
       navigate("/")
     } catch (error) {
-      if (error.message) {
+      if (error.response) {
         alert(error.response.data.message)
       } else {
         alert("Não foi possível criar o prato. Por favor, tente novamente mais tarde.")
@@ -84,8 +89,9 @@ export function CreateDish() {
           <h4>Imagem do Prato</h4>
 
           <div>
+            <label htmlFor="dish-image"></label>
             <FiUpload />
-            <label htmlFor="dish-image">{image ? "Pronto!" : "Selecione uma Imagem"}</label>
+            <p>{image ? "Pronto!" : "Selecione uma Imagem"}</p>
             <input
               type="file"
               id="dish-image"
