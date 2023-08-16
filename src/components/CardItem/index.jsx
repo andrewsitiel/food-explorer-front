@@ -5,6 +5,7 @@ import { useAuth } from "../../hooks/authHook";
 import { Container, Anchor } from "./styles";
 import { ItemsAmount } from "../ItemsAmount";
 import { api } from "../../services/api";
+import { Pencil } from "../Pencil";
 import { Button } from "../Button";
 import { useState } from "react";
 
@@ -32,7 +33,7 @@ export function CardItem({ item, delay }) {
 
   return (
     <Container delay={delay}>
-      <Heart />
+      {user.admin ? <Pencil id={item.id} /> : <Heart />}
 
       <img src={`${api.defaults.baseURL}/files/${item.image}`} alt={`Foto de um(a) ${item.name}`} />
 
