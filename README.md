@@ -21,6 +21,7 @@ Also, you can run locally on your computer. To do that:
 3. Run the command ```npm run dev```, or run the ```dev``` script with the package manager as you like.
 <br>
 For access with administrator permissions, login with that credentials:<br>
+
 - email: admin@email.com
 - password: 123456
 
