@@ -3,7 +3,7 @@ Application for a fictional restaurant, who sells foods, drinks and desserts.
 
 ## Techs
 
-[![My Skills](https://skillicons.dev/icons?i=react,styledcomponents,vite,axios)](https://skillicons.dev)
+[![Techs](https://skillicons.dev/icons?i=react,styledcomponents,vite,axios)](https://skillicons.dev)
 
 ## Libraries
 - [React Icons](https://react-icons.github.io/react-icons/)
