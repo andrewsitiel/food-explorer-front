@@ -11,6 +11,16 @@ Application for a fictional restaurant, who sells foods, drinks and desserts.
 
 [![My Skills](https://skillicons.dev/icons?i=react,styledcomponents,vite,axios)](https://skillicons.dev)
 
+## How to
+You can access the site on: https://exfood.netlify.app/. <br>
+<br>
+Also, you can run locally on your computer. To do that, clone the repository (if you don't know how to clone, read this [article](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)). Open the terminal, navigate to the project's base local, and run the command "npm run dev", or run the "dev" script with the package manager as you like.<br>
+<br>
+For access with administrator permissions, login with that credentials:<br>
+- email: admin@email.com
+- password: 123456
+
+
 ## Preview
 ![image](https://github.com/andrewsitiel/food-explorer-front/assets/86017907/a1832a63-b02e-4e1e-8ee8-7748110b2676)
 ![image](https://github.com/andrewsitiel/food-explorer-front/assets/86017907/54f08104-892b-4aa6-984a-b431971bc32f)
