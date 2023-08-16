@@ -12,11 +12,6 @@ export const Container = styled.button`
   border: none;
   
   cursor: pointer;
-  
-> h1 {
-  color: white;
-  font-size: 30px;
-}
 
   > svg {
     font-size: clamp(2.6rem, 1rem + 5vw, 3.2rem);
