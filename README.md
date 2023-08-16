@@ -1,16 +1,16 @@
 # FoodExplorer
 Application for a fictional restaurant, who sells foods, drinks and desserts.
 
+## Techs
+
+[![My Skills](https://skillicons.dev/icons?i=react,styledcomponents,vite,axios)](https://skillicons.dev)
+
 ## Libraries
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [Axios](https://axios-http.com/docs/intro)
 - [Swiper](https://swiperjs.com/get-started)
 - [React Router](https://reactrouter.com/en/main/start/tutorial)
-
-## Techs
-
-[![My Skills](https://skillicons.dev/icons?i=react,styledcomponents,vite,axios)](https://skillicons.dev)
-
+  
 ## How to
 You can access the site on: https://exfood.netlify.app/. <br>
 <br>
